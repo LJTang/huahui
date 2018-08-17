@@ -1,0 +1,93 @@
+<view class="container">
+  <swiper style="width:750rpx;margin:0 auto;height:220px;" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banner_IMG}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.image}}" class="slide-image" style="width:750rpx;margin:0 auto; height:220px" mode='aspectFill'/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="mat10R">
+    <view class="head_nav">
+      <ul class="head_nav_ul">
+        <li bindtap="tabClick" data-index="0"><span class="{{activeID==0?'active':''}}">特惠专区</span></li>
+        <li bindtap="tabClick" data-index="1"><span class="{{activeID==1?'active':''}}">商品专区</span></li>
+        <li bindtap="tabClick" data-index="2"><span class="{{activeID==2?'active':''}}">沙龙专区</span></li>
+        <li bindtap="tabClick" data-index="3"><span class="{{activeID==3?'active':''}}">DIY专区</span></li>
+      </ul>
+    </view>
+  </view>
+
+  <view>
+    <view class="let_Securities center">
+      <view class="left_Tree"><image src="/images/left_tree.png"></image></view>
+      <view class="middle">
+        <view>进店先领劵</view>
+        <view class="f12">COUPON REDEMPTION</view>
+      </view>
+
+      <view class="right_Tree"><image src="/images/right_tree.png"></image></view>
+    </view>
+
+    <view class="store_coupon mat10">
+      <block wx:for="{{coupon}}" wx:key="{{index}}">
+        <view class="store_Coupon_Box center" style="background:{{item.color}};" bindtap="bonus" data-id="{{item.id}}">
+          <view class="cFFF f30R">{{item.bouns_name}}</view>
+          <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
+          <view hidden="{{item.status=='已领取'}}"><span class="full">满{{item.min_goods_amount}}使用</span></view>
+          <view hidden="{{item.status=='未领取'}}"><span class="full">已领取</span></view>
+          <view class="round" hidden="{{item.status=='已领取'}}"><span class="" style="border:1rpx solid {{item.color}};">领</span></view>
+        </view>
+      </block>
+      <!--
+      <view class="store_Coupon_Box center bg_O">
+        <view class="cFFF f30R">店铺优惠券</view>
+        <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>1000</view>
+        <view><span class="full">满800使用</span></view>
+        <view class="round"><span class="bor_O">领</span></view>
+      </view>
+      <view class="store_Coupon_Box center bg_E8">
+        <view class="cFFF f30R">店铺优惠券</view>
+        <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>1000</view>
+        <view><span class="full">满800使用</span></view>
+        <view class="round"><span class="bor_E8">领</span></view>
+      </view>
+      <view class="store_Coupon_Box center bg_B5">
+        <view class="cFFF f30R">店铺优惠券</view>
+        <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>1000</view>
+        <view><span class="full">满800使用</span></view>
+        <view class="round"><span class="bor_B5">领</span></view>
+      </view>
+-->
+    </view>
+
+    <view class="mat20R">
+      <!--<block wx:for="{{goods}}" wx:key="{{index}}" wx:for-item="goodsItem" wx:key="*this">
+        <view class="list" bindtap="navTo" wx:for="{{goodsItem.goods_list}}" wx:key="*this" data-id="{{item.id}}">
+          <image src="{{apiURL}}{{item.goods_img}}"></image>
+          <view class="c5E">{{item.goods_name_en}}</view>
+          <view class="c5E">{{item.goods_name}}</view>
+          <view>¥{{item.goods_price}}</view>
+        </view>
+      </block>-->
+      <block wx:for="{{goods}}" wx:key="{{index}}">
+        <view class="list" bindtap="navTo" data-id="{{item.id}}">
+          <image src="{{imgURL}}{{item.goods_img}}" mode='aspectFill'></image>
+          <!--<image src="http://hua.guangzhoubaidu.com/tmp/uploads/20180802/ad72df09b6f3b103df1bd38e7c7be04b.jpg"></image>-->
+          <view class="c5E">{{item.goods_name_en}}</view>
+          <view class="c5E">{{item.goods_name}}</view>
+          <view>¥{{item.goods_price}}</view>
+        </view>
+      </block>
+
+      <view style="clear: both;"></view>
+
+    </view>
+  </view>
+
+    <!--<import src ="../pop_up/pop_up.wxml"/>-->
+    <!--<template is="popUp" data="{{...pop_up}}"/>-->
+
+</view>
+
+

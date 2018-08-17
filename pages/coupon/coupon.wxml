@@ -1,0 +1,58 @@
+<view class="container">
+
+    <view class="store_coupon mat10">
+      <block wx:for="{{coupon}}" wx:key="{{index}}">
+          <view class="box" wx:if="{{item.use=='未使用'}}">
+              <view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">
+                  <view class="cFFF f30R">{{item.bouns_name}}</view>
+                  <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
+                  <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
+              </view>
+              <view class="usingTips">有效期为2018-08-17 23:00</view>
+          </view>
+          <view class="box" wx:elif="{{item.use=='已使用'}}">
+              <view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">
+                  <view class="cFFF f30R">{{item.bouns_name}}</view>
+                  <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
+                  <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
+              </view>
+              <view class="usingTips">使用日期{{item.used_time}}</view>
+          </view>
+
+          <view class="box" wx:else>
+              <view class="store_Coupon_Box center" style="background:#ccc;" data-id="{{item.id}}">
+                  <view class="cFFF f30R">{{item.bouns_name}}</view>
+                  <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
+                  <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
+              </view>
+              <view class="usingTips">已使用</view>
+          </view>
+
+      </block>
+      <!--
+      <view class="store_Coupon_Box center bg_O">
+        <view class="cFFF f30R">店铺优惠券</view>
+        <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>1000</view>
+        <view><span class="full">满800使用</span></view>
+        <view class="round"><span class="bor_O">领</span></view>
+      </view>
+      <view class="store_Coupon_Box center bg_E8">
+        <view class="cFFF f30R">店铺优惠券</view>
+        <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>1000</view>
+        <view><span class="full">满800使用</span></view>
+        <view class="round"><span class="bor_E8">领</span></view>
+      </view>
+      <view class="store_Coupon_Box center bg_B5">
+        <view class="cFFF f30R">店铺优惠券</view>
+        <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>1000</view>
+        <view><span class="full">满800使用</span></view>
+        <view class="round"><span class="bor_B5">领</span></view>
+      </view>
+-->
+    </view>
+
+
+
+</view>
+
+

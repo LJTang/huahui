@@ -1,0 +1,83 @@
+<view class="container bgF5">
+  <view>
+      <view class="goods_Information_Content bgFFF" bindtap="jump_Location">
+        <!--<view class="mal20R pat20R c9">收货人：<text class="mal20R">{{address.consignee}}</text></view>-->
+        <!--<view class="mal20R mat10R c9">联系电话：<text>{{address.mobile}}</text></view>-->
+        <!--<view class="mal20R mat10R">收货地址：<text>{{address.city}}</text></view>-->
+        <view class='address_List pat20R pab20R display_F row' bindtap="jump_Location">
+          <!--<radio-group class="fL left">-->
+            <!--<radio color="#F47070"></radio>-->
+          <!--</radio-group>-->
+          <view class='cen'>
+            <view class='top'><text>{{address.consignee}}</text><text> {{address.mobile}}</text></view>
+            <view class='down'>{{address.city}}{{address.address}}</view>
+          </view>
+          <view class='right' hover-class='none' url=''><image src='/images/arrow-right.png'></image></view>
+        </view>
+        <view class="clear_B"></view>
+      </view>
+
+      <view class="bgFFF">
+        <block wx:for-items="{{goods}}" wx:key="{{index}}">
+          <view class="all_List">
+            <view class="all_List_top">
+              <view class="img"><image class="" src="{{imgURL}}{{item.goods_img}}" mode="aspectFill"></image></view>
+              <view class="text_Description">
+                <view>{{item.goods_name}}</view>
+                <view>{{item.description}}</view>
+                <!--<view class="c9">预售：</view>-->
+              </view>
+              <view class="price">
+                <view class="cE4" style="line-height:130rpx;">￥{{item.goods_price}}<span class="f28R"></span></view>
+                <view class="c3C"><span class="f28R">x</span>{{item.goods_number}}</view>
+              </view>
+            </view>
+
+            <!--<view class="total_Money">-->
+              <!--<view class="mal20R f32R">共{{item.goods_number}}件商品，共计<span class="cE4 mar20R">￥{{item.goods_price*item.goods_number}}</span></view>-->
+            <!--</view>-->
+            <!--<view class="commodity">-->
+              <!--<view class=""><span class="fL c9">商品总额</span><span class="fR">￥14525544</span></view>-->
+              <!--<view class=""><span class="fL c9">运费</span><span class="fR">￥14525544</span></view>-->
+              <!--<view class=""><span class="fL c9">实付99元免运费</span><span class="fR">￥14525544</span></view>-->
+            <!--</view>-->
+            <!--<view class="goods_Information border_T border_B f32R"><span class="mal20R fL c9">订单信息</span><span class="mar20R fR goods_State">￥14544.00</span></view>-->
+          </view>
+        </block>
+      </view>
+
+      <view class="bgFFF mat20R">
+        <view class="layout_LR" bindtap="{{bonus_list.length==0?'':'coupons_PopUp'}}">
+          <view class="layout_Left">优惠卷</view>
+          <view class="layout_Right">
+            <text style="color:#ccc;">{{bonus_money==0?'￥0.00':'-'+bonus_money+'元'}}</text>
+            <image src="/images/arrow-right.png" mode="aspectFill"></image>
+          </view>
+        </view>
+        <!--<view class="layout_LR anonymous">-->
+          <!--<view class="layout_Left">匿名购买</view>-->
+          <!--<view class="layout_Right" bindtap="off"><image src="{{off_Bool==true?'/images/red_off.png':'/images/red_off_no.png'}}" mode="aspectFill"></image></view>-->
+        <!--</view>-->
+      </view>
+    <view class="bgFFF mat20R" style="margin-bottom:120rpx;">
+      <view class="commodity">
+        <view class=""><span class="fL c9">商品总额</span><span class="fR cE4">￥{{strData.amout}}</span></view>
+        <!--<view class=""><span class="fL c9">运费</span><span class="fR">￥14525544</span></view>-->
+        <!--<view class=""><span class="fL c9">实付99元免运费</span><span class="fR">￥14525544</span></view>-->
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer_Btn">
+      <view class="fL mal20R"><span class="c9">应付金额：</span><span class="goods_State cE4">￥{{amout}}</span></view>
+      <!--<view class="play fR">去支付</view>-->
+      <view class="delete_Order fR" bindtap="onPayOrder">去支付</view>
+    </view>
+  </view>
+
+  <view hidden="{{pop_Bool}}">
+    <import src ="../pop_up/pop_up.wxml"/>
+    <template is="bonus" data="{{...bonus}}"/>
+  </view>
+</view>
+

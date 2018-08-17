@@ -1,0 +1,104 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+.search-view{
+  height: 100rpx;
+  background:#e7e7ef;
+  display: flex;
+  flex-direction: column;
+  border-radius:5px 5px;
+}
+.search-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:710rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  border-radius:5px 5px;
+}
+.search-icon{
+  width: 40rpx;
+  height:50rpx;
+  margin-left:10rpx;
+  margin-right: 20rpx;
+}
+.search-input{
+  width:640rpx;
+}
+.choose_Main{
+  width:610rpx;
+  margin:0 auto;
+}
+.hua_Name span{
+  background:#000;
+  color:#fff;
+  padding:3px 10px;
+}
+
+.span_List{
+  display:inline-block;
+  width:60rpx;
+  font-size:28rpx;
+  color:#666;
+}
+.span_EN{
+  margin-left: 60rpx;
+  font-size:28rpx;
+  color:#666;
+}
+/***********************/
+.choose_Title{
+  height:80rpx;
+  line-height:80rpx;
+}
+.search_Criteria{
+  display: flex;
+  flex-direction: row;
+  height:50rpx;
+  line-height:50rpx;
+}
+.search_Criteria view{
+  padding-right:20rpx;
+  margin-right:20rpx;
+  font-size:30rpx;
+}
+.search_Criteria .times image,.price image{
+  width:6px;
+  height:12px;
+}
+.filtrate image{
+  width:11px;
+  height:10px;
+}
+.vertical_Moulding{
+  width:1px;
+  background:#999;
+  display:inline-block;
+  height:30rpx;
+  vertical-align:middle;
+  margin-left:40rpx;
+}
+
+.list_Box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list{
+  width:345rpx;
+  margin-left:20rpx;
+  margin-bottom:30rpx;
+}
+.list image{
+  width:345rpx;
+  height:310rpx;
+}
+.v_align_M{vertical-align:middle;}
+

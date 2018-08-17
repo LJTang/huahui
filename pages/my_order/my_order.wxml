@@ -1,0 +1,55 @@
+<view>
+  <view>
+    <view class="head_nav">
+      <ul class="head_nav_ul">
+        <li class="{{activeID==0?'active':''}}" bindtap="tabToggle" data-index="0"><span>全部</span></li>
+        <li class="{{activeID==1?'active':''}}" bindtap="tabToggle" data-index="1"><span>待支付</span></li>
+        <li class="{{activeID==2?'active':''}}" bindtap="tabToggle" data-index="2"><span>待收货</span></li>
+        <li class="{{activeID==3?'active':''}}" bindtap="tabToggle" data-index="3"><span>已完成</span></li>
+      </ul>
+    </view>
+    <scroll-view scroll-y style="height:{{height}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
+      <!-- 没有 -->
+      <view hidden="{{isData==0?false:true}}">
+        <view class="no_Order center mat30"><image src="/images/empty.png" mode='aspectFill'></image></view>
+        <view class="center mat30">您目前没有任何订单</view>
+      </view>
+  <!-- 全部 -->
+      <view>
+        <view hidden="{{isData==0}}">
+          <!--<view class="unpaid_Remind"><span class="mal20R c3">2018-08-01</span><span class="mal20R">12:00:59</span> <span class="fR mar20R">待支付，{{clock}}后取消</span></view>-->
+          <block wx:for="{{goods}}" wx:for-item="goodsItem" wx:key="*this">
+            <view class="all_List">
+              <view class="all_List_top" wx:for="{{goodsItem.goods_list}}" wx:key="*this">
+                <view class="img"><image class="" src="{{item.goods_img}}" mode='aspectFill'></image></view>
+                <view class="text_Description">
+                  <view>{{item.goods_name}}</view>
+                  <view class="cC f32R">{{item.description}}</view>
+                  <view class="goods_Price"><span class="fL">x{{item.goods_number}}</span><span class="fR">￥{{item.goods_price}}</span></view>
+                </view>
+              </view>
+
+              <view class="total_Money">
+                <view class="mal20R">共{{goodsItem.count}}件商品，共计￥<span class="c0 mar20R f34R">{{goodsItem.goods_amount}}</span></view>
+                <view class="operation">
+                  <view class="view_Information" bindtap="jump_StayPlay" data-id="{{goodsItem.order_id}}">查看详情</view>
+                  <view wx:if="{{goodsItem.handler_id==1}}" bindtap="onOrderPay" class="play mal20R" data-id="{{goodsItem.order_id}}">去支付</view>
+                  <view wx:elif="{{goodsItem.handler_id==2}}" bindtap="onConfirmReceipt" class="play mal20R" data-id="{{goodsItem.order_id}}">确认上课</view>
+                  <view wx:elif="{{goodsItem.handler_id==3}}" bindtap="onRefund" class="play mal20R" data-id="{{goodsItem.order_id}}">申请退款</view>
+                  <view wx:else></view>
+                </view>
+              </view>
+
+            </view>
+          </block>
+
+        </view>
+        <view hidden="true" class="pab20" style="height:40px">
+          <view class="noMoreData" hidden="{{noMoreHidden}}">没有更多了</view>
+          <!--<view class="inLoad pat20 pab20" hidden="{{inLoadHidden}}"><image src="/images/loading.gif"></image><span>加载中...</span></view>-->
+          <view class="toLoadMore" hidden="{{loadMoreHidden}}" bindtap="onGetConnect">加载更多</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

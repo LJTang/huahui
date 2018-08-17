@@ -1,0 +1,15 @@
+<view class="container f30R">
+  <view class="">
+    <block wx:for="{{goods}}" wx:key="{{index}}">
+      <view class="layout_LR">
+        <view class="layout_Left"><image class="" src="{{item.goods_img}}" mode="aspectFill"></image></view>
+        <view class="layout_Right">
+          <view>{{item.goods_name}}</view>
+          <view class="mat20R cC">{{item.description}}</view>
+          <view class="mat20R"><view class="btn" bindtap="jump_ProductDetails" data-id="{{item.id}}">预约</view></view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

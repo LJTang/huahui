@@ -1,0 +1,130 @@
+<template name="popUp">
+    <view class="region_box">
+        <view class="region_screen"></view>
+        <view class="mainBox mediate">
+            <view class="popups" style="margin-top:-{{up.length*50}}rpx;">
+                <view class="up_List" bindtap="onClickValue" wx:for="{{up}}" wx:key="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+                <!--<view>dfl;hjfk</view>-->
+            </view>
+        </view>
+    </view>
+</template>
+
+<template name="bonus">
+    <view class="region_box">
+        <view class="region_screen" bindtap="close_Pop"></view>
+        <view class="mainBox mediate" style="left:50rpx;">
+
+            <view class="popups" style="margin-top:-{{bonus_Arr.length>4?120:95}}px;font-size:40rpx;margin-left:0;">
+                <!--<view class="up_List" bindtap="onClickValue" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}">{{item.bouns_name}} {{item.bonus_money}}元</view>-->
+                <!--<view class="up_List" bindtap="onClickValue" data-id="" data-money="0">不使用红包</view>-->
+                <!--<icon class="pop_Clear" type="clear" size="30" bindtap="close_Pop"></icon>-->
+                <icon class="pop_Clear" type="clear" size="30" bindtap="close_Pop"></icon>
+                <view class="centerBox" style="padding:20px 0 50px 0;">
+                    <view class="store_Coupon_Box center mat20R" style="background:{{item.color}};" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}" bindtap="onClickValue">
+                        <view class="cFFF f30R">{{item.bouns_name}}</view>
+                        <view class="cFFF pat10R pab10R"><span class="v_align_T f28R">¥</span>{{item.bonus_money}}{{width}}</view>
+                        <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
+                    </view>
+
+                </view>
+
+                <!--<view>dfl;hjfk</view>-->
+            </view>
+        </view>
+    </view>
+</template>
+
+<template name="standard">
+    <view class="region_box">
+        <view class="region_screen" style="bottom:100rpx;"></view>
+        <view class="mainBox" style="bottom:100rpx;background:#fff;">
+            <view class="popups" style="width:100%;background:#fff;margin:0;">
+                <view class="footer_Head display_F row">
+                    <view class="head_IMG"><image src="/images/list1.png"></image></view>
+                    <view style="font-size:30rpx;">
+                        <view class="red mat10">￥49-128</view>
+                        <view class="mat5">库存<span>10564</span>件</view>
+                        <view class="mat5">请选择颜色分类</view>
+                    </view>
+                </view>
+
+                <view class="sel_Mode display_F row">
+                    <view class="zuHua_Btn {{zuhua_Bool==true?'bg0':''}}" bindtap="jump_ZuHua">租花</view>
+                    <view class="mal20R">购买</view>
+                </view>
+                <!--<view class="sel_Merchandise display_F row mab10">-->
+                    <!--<view class="sel_Merchandise_List"><image src="/images/list1.png"></image>11香槟枚+干花</view>-->
+                    <!--<view class="sel_Merchandise_List"><image src="/images/list1.png"></image> <span>11香槟枚+干花</span></view>-->
+                <!--</view>-->
+                <view>
+                    <view class="mat40R">颜色</view>
+                    <view class="use_View display_F row mat20R">
+                        <view class="use_Btn_O {{selected==true?'active':''}}" bindtap="selectedColor" data-index="0">粉色</view>
+                    </view>
+                    <view class="mat20R">租期</view>
+                    <view class="use_View display_F row mat20R">
+                        <view class="use_Btn_O {{activeID==0?'active':''}}" bindtap="tabClick" data-index="0">30天</view>
+                        <view class="use_Btn_T {{activeID==1?'active':''}}" bindtap="tabClick" data-index="1">60天</view>
+                        <view class="use_Btn_Three {{activeID==2?'active':''}}" bindtap="tabClick" data-index="2">90天</view>
+                    </view>
+
+                    <view class="mat20R mab10R">押金</view>
+                    <view class="cash_Pledge" bindtap="tabClick">￥400租期结束可退</view>
+
+                    <view class="mat20R mab10R">预存</view>
+                    <view class="prestore" bindtap="tabClick" >￥99租期内扣费</view>
+
+
+                    <view class="quantity mat20R">购买数量 <span class="minus" bindtap="decrease"> - </span><span class="text">{{hua_Number}}</span><span class="jia" bindtap="appendBlock">+</span> 库存99件</view>
+
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+
+
+<template name="protocol_Frame">
+    <view class="region_box">
+        <view class="region_screen" bindtap="close_Pop"></view>
+        <view class="mainBox inMiddle">
+            <view class="popups" style="">
+                <view class="hua_Title">上海左依花卉租花协议</view>
+                <view class="hua_Center">
+                    <view>发货的功夫好办法改变你</view>
+
+                    <view>点击“同意”，即表示您同意上述内容，并确认您已阅读 <span class="f36R" style="color:#000;font-size:40rpx;font-weight:600;">上海左依花卉租花协议</span></view>
+                </view>
+                <view class="agreement_Btn">
+                    <view bindtap="agreed_No" data-status="0">不同意</view>
+                    <view bindtap="agreedTo" data-status="1">同意</view>
+                </view>
+                <!--<view class="up_List" bindtap="onClickValue" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}"></view>-->
+                <!--<view>dfl;hjfk</view>-->
+            </view>
+        </view>
+    </view>
+</template>
+
+<template name="rent_Flower">
+    <view class="region_box">
+        <view class="region_screen" bindtap="close_Pop"></view>
+        <view class="mainBox inMiddle">
+            <view class="popups" style="">
+                <view class="hua_Title">上海左依花卉租花协议</view>
+                <view class="hua_Center">
+                    <view>发货的功夫好办法改变你</view>
+
+                    <view>点击“同意”，即表示您同意上述内容，并确认您已阅读 <span class="f36R" style="color:#000;font-size:40rpx;font-weight:600;">上海左依花卉租花协议</span></view>
+                </view>
+                <view class="agreement_Btn">
+                    <view bindtap="agreed_No" data-status="0">不同意</view>
+                    <view bindtap="agreedTo" data-status="1">同意</view>
+                </view>
+                <!--<view class="up_List" bindtap="onClickValue" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}"></view>-->
+                <!--<view>dfl;hjfk</view>-->
+            </view>
+        </view>
+    </view>
+</template>

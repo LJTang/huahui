@@ -1,0 +1,56 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+/********** 搜索历史 ************/
+.search_History{margin-top:40rpx;}
+.search_History .layout_LR,.search_Hot .layout_LR{
+  height:80rpx;
+  line-height:80rpx;
+}
+.search_History .layout_LR image{
+  margin-top:10rpx;
+}
+.search_History_List{
+  display: flex;
+  border-bottom:1rpx solid #d9d9d9;
+  padding-bottom:60rpx;
+}
+.search_History_List>view,.search_Hot_List>view{
+  padding:6rpx 16rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  background:#d9d9d9;
+}
+/**********************/
+.v_align_M{vertical-align:middle;}
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width: 750rpx;
+  height:100rpx;
+  line-height:100rpx;
+}
+.footer .foot_Btn>view{
+  text-align: center;
+  width:375rpx;
+  height:100rpx;
+  line-height:100rpx;
+}
+.footer .foot_Btn .reset{
+  color:#000;
+}
+.footer .foot_Btn .ok_Btn{
+ background:#000;
+  color:#fff;
+}
+.footer .foot_Btn .disabled{
+  color:#d9d9d9;
+}
+

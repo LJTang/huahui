@@ -1,0 +1,57 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+.chooseD_Title{
+  height:80rpx;
+  line-height:80rpx;
+}
+.search_Criteria{
+  display: flex;
+  flex-direction: row;
+  height:50rpx;
+  line-height:50rpx;
+}
+.search_Criteria view{
+  padding-right:20rpx;
+  margin-right:20rpx;
+  font-size:30rpx;
+}
+.search_Criteria .times image,.price image{
+  width:6px;
+  height:12px;
+}
+.filtrate image{
+   width:11px;
+   height:10px;
+ }
+.vertical_Moulding{
+  width:1px;
+  background:#999;
+  display:inline-block;
+  height:30rpx;
+  vertical-align:middle;
+  margin-left:40rpx;
+}
+
+.list_Box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list{
+  width:345rpx;
+  margin-left:20rpx;
+  margin-bottom:30rpx;
+}
+.list image{
+  width:345rpx;
+  height:310rpx;
+}
+.v_align_M{vertical-align:middle;}
+

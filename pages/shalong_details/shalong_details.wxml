@@ -1,0 +1,69 @@
+<view class="container">
+  <swiper style="width:710rpx;height:180px;margin-left:20rpx;" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{gallery_list}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.goods_img}}" class="slide-image" style="width:710rpx;margin:0 auto;height:180px;" mode='aspectFill'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="W710">
+    <view class="mat20R mar20R">{{keData.detail.goods_name}}</view>
+    <view class="c52 mar20R">{{keData.detail.description}}</view>
+    <view class="mar20R" style="color:#e4393c;font-size:60rpx;font-weight: 500;">￥{{keData.detail.goods_price}}</view>
+  </view>
+  <view class="bor_TC mat40R"></view>
+  <view class="W710">
+    <view class="mat30R f36R">基本信息</view>
+    <view class="mat20R f30R" wx:for="{{keData.detail.specification}}" wx:key="{{index}}">{{item.title}}<span class="cB">{{item.title_desc}}</span></view>
+    <!--<view class="mat20R f30R">时间：<span class="cB">{{keData.detail.class_time}}</span></view>-->
+    <!--<view class="mat20R f30R">上课地址：<span class="cB">{{keData.detail.class_address}}</span></view>-->
+    <!--<view class="mat20R f30R">招生对象：<span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
+    <!--<view class="mat20R f30R">说明：<span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
+  </view>
+
+  <view class="bor_TC mat50R"></view>
+  <view class="mat50R mal20R">课程内容</view>
+
+  <view class="details">
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <!--<import src="../../wxParse/wxParse.wxml"/>-->
+  <!--<template is="wxParse" data="{{wxParseData:article.nodes}}"/>-->
+
+  <view class="W670 mat100R">
+
+    <!--<view class="center" style="font-size:60rpx;font-weight: 500;">details</view>-->
+    <!--<view class="center mat20R">细节包装</view>-->
+    <!--<view class="mat50R">产品包含：</view>-->
+    <!--<view class="center_IMG mat50R"><image src="/images/list1.png"></image></view>-->
+    <!--<view class="mat50R">产品包含：</view>-->
+    <!--<view class="center_IMG mat50R"><image src="/images/list1.png"></image></view>-->
+
+    <!--<view class="two_IMG display_F row mat50R">-->
+      <!--<view>-->
+        <!--<image src="/images/list1.png"></image>-->
+        <!--<view class="mat20R">优质玫瑰</view>-->
+      <!--</view>-->
+      <!--<view class="mal20R">-->
+        <!--<image src="/images/list1.png"></image>-->
+        <!--<view class="mat20R">优质玫瑰</view>-->
+      <!--</view>-->
+    <!--</view>-->
+
+    <!--<view class="mat20R f30R"><span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
+
+    <!--<view class="center_IMG mat20R"><image src="/images/list1.png"></image></view>-->
+    <!--<view class="center_IMG mat20R"><image src="/images/list1.png"></image></view>-->
+    <!--<view class="mat20R f30R"><span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
+
+  </view>
+
+ <view class="mat120R"></view>
+
+  <view class="footer">
+    <view class="display_F row">
+      <view class="add_Shopping" bindtap="makeAnAppointment">立即预约</view>
+    </view>
+  </view>
+</view>

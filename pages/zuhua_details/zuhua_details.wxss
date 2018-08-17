@@ -1,0 +1,121 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+  width:750rpx;
+}
+.W750{width:750rpx;}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+.head_IMG image{
+  width:750rpx;
+  height:460rpx;
+}
+
+.zu_Head{}
+.zu_Head .img{}
+.zu_Head .img image{
+  width:160rpx;
+  height:140rpx;
+}
+.zu_Head .text{
+  font-size: 32rpx;
+}
+.span_Zu{
+  padding:1rpx 6rpx;
+  font-size: 28rpx;
+  background: #000;
+  color:#fff;
+}
+.mat5R{margin-top: 5rpx;}
+.c52{color:#525252}
+.cD9{color:#999;}
+.use_View>view{
+  width:150rpx;
+  height:78rpx;
+  line-height:78rpx;
+  margin-right:20rpx;
+  text-align: center;
+}
+.use_Btn_O{
+  border:1px solid #999;
+  color:#999;
+}
+.use_Btn_T{
+  border:1px solid #999;
+  color:#999;
+}
+.use_Btn_Three{
+  border:1px solid #999;
+  color:#999;
+}
+.active{
+  border:1px solid #000;
+  color:#fff;
+  background: #000;
+}
+.cFF1E56{color:#ff1e56}
+.cash_Pledge,.prestore{
+  width:450rpx;
+  height:80rpx;
+  line-height:80rpx;
+  background:#000;
+  color:#fff;
+}
+.quantity{
+  margin-top: 50rpx;
+  padding-bottom:50rpx;
+  border-bottom: 1px solid #999;
+}
+.quantity span{
+  display: inline-block;
+  border:1px solid #999;
+}
+.minus{
+  padding:8rpx 15rpx;
+  margin:0 10rpx;
+}
+.quantity .text{
+  padding:8rpx 20rpx;
+  margin:0 10rpx;
+}
+.jia{
+  padding:8rpx 15rpx;
+  margin-left: 10rpx;
+}
+.list_Box{margin-bottom:110rpx;}
+.list_Box image{
+  width:710rpx;
+  height:400rpx;
+}
+
+.footer{
+  position:fixed;
+  width: 750rpx;
+  bottom:0;
+  left:0;
+  background: #fff;
+  font-size: 32rpx;
+}
+.foot_Btn{
+  height:100rpx;
+  line-height:100rpx;
+  color:#fff;
+}
+.home{
+  width:350rpx;
+}
+.home image{
+  width:50rpx;
+  height:50rpx;
+}
+.footer .mai{
+  width:200rpx;
+  background: #ec534b;
+}
+.footer .zu{
+  width:200rpx;
+  background: #ed9f9d;
+}

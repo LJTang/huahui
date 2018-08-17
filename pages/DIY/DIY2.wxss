@@ -1,0 +1,380 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+.nav{
+}
+.nav_Left{
+  width:200rpx;
+  text-align: center;
+}
+.nav_Left>view{
+  width:200rpx;
+  height:49px;
+  line-height:50px;
+  text-align:center;
+}
+.nav_Left .active{
+  border-bottom: 1px solid #000;
+}
+.right{width:530rpx;margin-left:20rpx;}
+.right_List{
+  width:710rpx;
+  margin:10px auto;
+}
+.right_List .right_IMG{
+  width:160rpx;
+  height:160rpx;
+  margin-right: 30rpx;
+}
+.right_List .right_IMG image{
+  width:160rpx;
+  height:160rpx;
+  vertical-align: middle;
+}
+.right_Text{
+  width:340rpx;
+  height: 160rpx;
+  position: relative;
+}
+.text_B{
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+.jia{
+  background:red;
+  color:#fff;
+  font-size:38rpx;
+  border-radius: 50%;
+  width:50rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  margin-bottom: 5px;
+}
+
+.search-view{
+  height: 100rpx;
+  background:#e7e7ef;
+  display: flex;
+  flex-direction: column;
+  border-radius:5px 5px;
+}
+.search-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:710rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  border-radius:5px 5px;
+}
+.search-icon{
+  width: 40rpx;
+  height:50rpx;
+  margin-left:10rpx;
+  margin-right: 20rpx;
+}
+.search-input{
+  width:640rpx;
+}
+
+.list_Box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list{
+  width:345rpx;
+  margin-left:20rpx;
+  margin-bottom:20px;
+}
+.list image {
+  width: 345rpx;
+  height:300rpx;
+}
+
+.bor_T{border-top:1px solid #d9d9d9;}
+.bor_B{border-bottom:1px solid #d9d9d9;}
+
+.arrowType_View{
+  width:710rpx;
+  margin: 0 auto;
+  height:80rpx;
+  line-height:80rpx;
+}
+.arrowType_Title{width:680rpx;}
+.arrowType_IMG{}
+.arrowType_IMG image{
+  width:30rpx;
+  height:30rpx;
+}
+
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:750rpx;
+  background:#fcf9f9;
+}
+.footer_Head{
+  width:710rpx;
+  margin:10px auto;
+}
+.footer_Head .head_IMG{
+  width:160rpx;
+  height:160rpx;
+  margin-right: 30rpx;
+}
+.footer_Head .head_IMG image{
+  width:160rpx;
+  height:160rpx;
+  vertical-align: middle;
+}
+.red{color:red}
+
+.sel_Mode{margin:10px 0;}
+
+.sel_Mode view{
+  margin-left: 20rpx;
+  width:150rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background:#8a8c8c;
+  color:#fff;
+  border-radius:5px;
+}
+
+.sel_Merchandise{margin-bottom:20px;}
+.sel_Merchandise_List{
+  width:345rpx;
+  height:60rpx;
+  line-height:60rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.sel_Merchandise image{
+  width:60rpx;
+  height:60rpx;
+  vertical-align:top;
+  margin-right: 10rpx;
+}
+
+.footer_Btn>view:first-child{
+  width:300rpx;
+  height:100rpx;
+  background: #fff;
+}
+.footer_Btn image{
+  width:80rpx;
+  height:80rpx;
+  margin-left:20rpx;
+  margin-top:10rpx;
+}
+.span_Number{
+  position:relative;
+  top:-50rpx;
+  left:-20rpx;
+  font-size:28rpx;
+  background:#f00;
+  color:#fff;
+  border-radius: 50%;
+  padding:2rpx 4rpx;
+}
+.footer_Btn>view:nth-child(2),.footer_Btn>view:last-child{
+  width:225rpx;
+  height:100rpx;
+  line-height:100rpx;
+  color:#fff;
+  text-align: center;
+}
+.footer_Btn>view:nth-child(2){background:#f00;}
+.footer_Btn>view:last-child{background:#fd4d4d;}
+
+
+/*******************/
+.swiper{
+  height: 1130rpx;
+}
+#orderPage{
+  display: flex;
+  height: auto;
+}
+#commentPage{
+  height: auto;
+}
+#restaurantPage{
+  background: yellow;
+}
+.orderPage-sideBar{
+  width: 150rpx;
+  height: 1130rpx;
+  background: #F4F4F4;
+}
+.menuList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menuList .menu{
+  height: 100rpx;
+  width: 130rpx;
+  position: relative;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  /*border-bottom: 1rpx dashed #ECECEC;*/
+}
+.selected.menu::before{
+  content: "";
+  position: absolute;
+  left: -10rpx;
+  top: 32rpx;
+  height: 36rpx;
+  width: 7rpx;
+  background: #FFD161;
+}
+.foodList{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ECECEC;
+}
+.foodList .title{
+  padding: 15rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  font-size: 25rpx;
+}
+.food{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 170rpx;
+  border-bottom: 1rpx solid #ECECEC;
+  background: white;
+}
+.food::before{
+  content: "";
+  width: 15rpx;
+  height: 100%;
+  left: -15rpx;
+  top: 0;
+  border: 1px solid white;
+}
+.food .img{
+  width: 120rpx;
+  height: 120rpx;
+}
+.food-info{
+  padding-left: 15rpx;
+  line-height: 80rpx;
+  flex: 1;
+}
+.food .name{
+  font-size: 30rpx;
+}
+.food .sales{
+  font-size: 25rpx;
+  color: #ACACAC;
+}
+.food .price{
+  font-size: 30rpx;
+  color: red;
+}
+.food-numb{
+  height: 40rpx;
+  width: 130rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 95rpx;
+  margin-right: 30rpx;
+  line-height: 40rpx;
+  font-size: 25rpx;
+}
+.food-numb .add,.food-numb .remove{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 30rpx;
+  text-align: center;
+}
+.food-numb .add{
+  font-size: 35rpx;
+  line-height: 37rpx;
+  font-weight: 700;
+  background: #fb4d4d;
+  margin-left: 15rpx;
+  color:#fff;
+}
+.food-numb .remove{
+  margin-right: 15rpx;
+  line-height: 28rpx;
+  font-size: 60rpx;
+  font-weight: 500;
+  box-sizing: border-box;
+  border: 2rpx;
+  border-style: solid;
+  border-color: #B0B0B0;
+  color: #B0B0B0;
+}
+.footer{
+  display: flex;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom:0;
+  height: 100rpx;
+}
+.footer .img{
+  position: absolute;
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 100rpx;
+  left: 20rpx;
+  top: -45rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#orderPage .howMuch{
+  position: relative;
+  flex: 1;
+  font-size: 28rpx;
+  background: white;
+  line-height: 100rpx;
+  padding-left: 130rpx;
+}
+.footer .pay{
+  width: 200rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  font-size: 30rpx;
+  background: #CCCCCC;
+}
+#orderPage .cost{
+  margin-top: 10rpx;
+  color: red;
+  font-size: 50rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  width: 100rpx;
+}
+.footer .active .free{
+  font-size: 25rpx;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.footer .active .pay{
+  background: #FFD161;
+  color: black;
+}
+

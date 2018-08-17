@@ -1,0 +1,41 @@
+<!--<view class="container" style="height:{{height}}px;">-->
+  <!--<view class="" style="height:{{height-50}}px;overflow: auto;">-->
+    <!--<block wx:for-items="{{location}}" wx:key="{{index}}">-->
+      <!--<view class="W750 mab20R bgFFF" bindtap="modifyAddress" data-id="{{item.address_id}}">-->
+        <!--<view class="list W710">-->
+          <!--<view class="">{{item.consignee}}  {{item.mobile}}</view>-->
+          <!--<view class="c9 mat10R">{{item.city}}</view>-->
+          <!--<view class="c9 mat10R">{{item.address}}</view>-->
+        <!--</view>-->
+      <!--</view>-->
+    <!--</block>-->
+  <!--</view>-->
+
+  <!--<view class="footer">-->
+    <!--<view class="by_Btn" bindtap="address">添加新地址</view>-->
+  <!--</view>-->
+<!--</view>-->
+<view class="container">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <block wx:for-items="{{location}}" wx:key="{{index}}">
+      <view class='address_List pat20R pab20R display_F row' bindtap="setAddress" data-id="{{item.address_id}}">
+        <view>
+          <!--<radio-group class="fL left">-->
+          <!--<radio color="#F47070"></radio>-->
+          <!--</radio-group>-->
+          <radio color="#F47070" value="{{item.address_id}}" checked="{{item.is_default==1}}"/>
+        </view>
+        <view class='fL cen'>
+          <view class='top'><text>{{item.consignee}}</text><text> {{item.mobile}}</text></view>
+          <view class='down'>{{item.city}}{{item.address}}</view>
+        </view>
+        <view class='right fR' catchtap="modificationAddress" data-index="{{index}}"><image src='/images/arrow-right.png'></image></view>
+      </view>
+    </block>
+  </radio-group>
+
+  <view class="footer">
+    <view class="by_Btn" bindtap="address">添加新地址</view>
+    </view>
+</view>
+<!--<navigator hover-class='none' class='big_bnt bnt' url='/pages/add_address/add_address'>+ 新增地址</navigator>-->

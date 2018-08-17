@@ -1,0 +1,89 @@
+<view class="container">
+  <!--<view class="arrowType_View display_F row bor_B" bindtap="jump_Location">-->
+    <!--<view class="arrowType_Title">送至</view>-->
+    <!--<view class="arrowType_Center">请填写收货地址</view>-->
+  <!--</view>-->
+
+  <view class="bgFFF W750">
+    <view class="W710">
+      <view class="yuyue_Head">
+        <view class="img"><image src="{{strData.goods_img}}"></image></view>
+        <view class="text">
+          <view class="mal30R"><text>{{strData.goods_name}}</text></view>
+          <view class="mal30R"><text class="cED544D">￥{{strData.goods_price}}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bgFFF W750 mat20R bor_B">
+    <view class="arrowType_View display_F row">
+      <view class="arrowType_Title">上课地址</view>
+      <view class="arrowType_Center"><input type="text" placeholder="" value="{{lass_address}}" disabled="true"/></view>
+      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+    </view>
+  </view>
+<view class="bgFFF W750 mat20R bor_B">
+    <view class="arrowType_View display_F row">
+      <view class="arrowType_Title">上课时间</view>
+      <view class="arrowType_Center"><input type="text" placeholder="" value="{{class_time}}" disabled="true"/></view>
+      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+    </view>
+  </view>
+
+<view class="bgFFF W750 mat20R bor_B">
+    <view class="arrowType_View display_F row">
+      <view class="arrowType_Title">姓名</view>
+      <view class="arrowType_Center"><input type="text" placeholder="请输入您的姓名" value="{{youName}}" bindinput='getFocus_Name'/></view>
+      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+    </view>
+  </view>
+
+  <view class="bgFFF W750 bor_B">
+    <view class="arrowType_View display_F row">
+      <view class="arrowType_Title">手机号</view>
+      <view class="arrowType_Center"><input type="number" placeholder="请输入您的手机号码" maxlength="11" vlaue="{{phone}}" bindinput='getFocus_Phone'/></view>
+      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+    </view>
+  </view>
+  <view class="bgFFF W750">
+    <view class="arrowType_View display_F row">
+      <view class="arrowType_Title">备注</view>
+      <view class="arrowType_Center"><input type="text" placeholder="如有其它需求，请告知我们" vlaue="{{note}}" bindinput='getFocus_Note'/></view>
+      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+    </view>
+  </view>
+
+  <view class="bgFFF W750 mat20R bor_B">
+    <view class="arrowType_View listenToClass display_F row">
+      <view class="arrowType_Title">听课人数</view>
+      <view class="arrowType_Center">
+        <span class="minus {{hua_Number==1?'active':''}}" bindtap="decrease"> - </span><span class="text">{{hua_Number}}</span><span class="jia" bindtap="appendBlock">+</span>
+      </view>
+    </view>
+  </view>
+  <view class="bgFFF W750">
+    <view class="arrowType_View display_F row">
+      <view class="arrowType_Title">合计</view>
+      <view class="arrowType_Center cED544D" style="width:550rpx;text-align: right;">￥{{amount}}</view>
+    </view>
+  </view>
+
+  <view class="bgFFF W750 mat20R">
+    <view class="arrowType_View display_F row" bindtap="{{bonus_list.length==0?'':'coupons_PopUp'}}">
+      <view class="arrowType_Title">优惠券</view>
+      <view class="arrowType_Center" style="text-align: right;"><text class="cC">{{bonus_money==0?'￥0.00':'-'+bonus_money+'元'}}</text></view>
+      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+    </view>
+  </view>
+
+  <view class="footer center">
+    <view class="amountPayable">应付金额：<span class="cED9F9D mar20R">￥{{amount}}</span></view>
+    <view class="foot_Btn" bindtap="onYuYue">确定下单</view>
+  </view>
+</view>
+
+<view hidden="{{pop_Bool}}">
+  <import src ="../pop_up/pop_up.wxml"/>
+  <template is="bonus" data="{{...bonus}}"/>
+</view>

@@ -1,0 +1,66 @@
+<template name="orderPage">
+    <scroll-view class="orderPage-sideBar" 
+    bindscrolltolower="lower" 
+    scroll-y>
+      <block wx:for="{{menu}}" wx:key="">
+        <view class="menuList {{index==selected?'selected':''}}">
+          <view class="menu"
+          data-index="{{index}}" 
+          catchtap="turnMenu">{{item.typeName}}</view>
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view class="foodList" scroll-y style="height:596rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <!--<view class="title">{{menu[selected].typeName}}</view>-->
+      <block wx:for="{{menu[selected].menuContent}}" wx:key="">
+        <view class="food">
+          <image class="img" src="/images/list1.png"></image>
+          <view class="food-info">
+            <view class="name">月售{{item.name}}</view>
+            <view class="sales"></view>
+            <view class="price">￥  {{item.price}}</view>
+          </view>
+          <view class="food-numb">
+            <!--<view class="remove" -->
+            <!--bindtap="removeFromTrolley"-->
+            <!--hidden="{{item.numb==0}}" -->
+            <!--data-index="{{index}}">-</view>-->
+            <!--<text class="text" -->
+            <!--hidden="{{item.numb==0}}">{{item.numb}}</text>-->
+            <view class="add" 
+            bindtap="addToTrolley" data-index="{{index}}">+</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <!--<view class="footer {{cost!=0?'active':''}}">-->
+    <!--<view class="footer" hidden="{{cost==0}}">-->
+      <!--<view>-->
+        <!--<view class="shopping_Title">-->
+          <!--<view class="fL"><span></span><span>购物车</span></view>-->
+          <!--<view class="fR mar20R"><image src="/images/delete.png"></image><span>清空购物车</span></view>-->
+        <!--</view>-->
+
+        <!--<view class="shopping_List bgFFF">-->
+          <!--<view class="fL mal20R">粉红</view>-->
+          <!--<view class="fR mar20R">-->
+            <!--<view class="remove" bindtap="removeFromBlock" data-index="{{index}}">-</view>-->
+            <!--<text class="text">{{number}}</text>-->
+            <!--<view class="add" bindtap="addToBlock" data-index="{{index}}">+</view>-->
+          <!--</view>-->
+        <!--</view>-->
+      <!--</view>-->
+
+      <!--<view class="display_F h100R">-->
+        <!--<view class="howMuch">-->
+          <!--<view class="img" style="background:#fd333f;">-->
+            <!--<image src="/images/diy_shopping.png" style="width:60rpx;height:60rpx;"></image>-->
+            <!--<span class="span_Number">19</span>-->
+          <!--</view>-->
+          <!--<view class="cost">￥{{cost}}</view>-->
+          <!--<view class="free">免配送费</view>-->
+        <!--</view>-->
+        <!--<view class="pay">{{cost!=0?'选好了':'选好了'}}</view>-->
+      <!--</view>-->
+    <!--</view>-->
+</template>

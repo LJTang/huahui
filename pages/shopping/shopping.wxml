@@ -1,0 +1,47 @@
+<view class="container">
+  <view hidden="{{view_Bool2}}" class="shopping_EmptyBox" style="height:{{height}}px;">
+    <view class="img"><image src="/images/shopping_empty.png" mode='aspectFill'></image></view>
+    <view class="text">这里什么都没有呀...</view>
+    <!--<view class="shopping_EmptyBtn">去花店逛逛</view>-->
+  </view>
+  <!--hidden="{{view_Bool}}"-->
+  <view hidden="{{view_Bool}}" class="W750 bgFFF bgF5">
+    <view class="list-top" bindtap="bindAllSelect">
+      <view class="all-selected {{allSelect?'active':''}}">全选</view>
+      <!--<view class="edit-btn" hidden="{{!saveHidden}}" bindtap="editTap">编辑</view>-->
+      <!--<view class="edit-btn" hidden="{{saveHidden}}" bindtap="saveTap">完成</view>-->
+    </view>
+
+    <view class="goodsList">
+      <view class="a-gooods" wx:for="{{goods}}"  wx:key="{{index}}">
+        <view class="a-goods-conts {{item.active? 'active':''}}" bindtap="selectTap" data-index="{{index}}" style="">
+          <view class="goods-info">
+            <view class="img-box">
+              <image src="{{imgURL}}{{item.goods_img}}" class="img" mode='aspectFill'/>
+            </view>
+            <view class="text-box">
+              <view class="goods-title">{{item.goods_name}}</view>
+              <view class="goods-label"> </view>
+              <view class="goods-price">¥ {{item.goods_price}}</view>
+              <view class="buy-num">
+                <view class="jian-btn {{item.goods_number==1? 'disabled':''}}" catchtap="jianBtnTap" data-index="{{index}}">-</view>
+                <view class="mal20R mar20R">{{item.goods_number}}</view>
+                <view class="jia-btn" catchtap="jiaBtnTap" data-index="{{index}}">+</view>
+                <view class="remove_Btn" catchtap="delItem" data-id="{{item.rec_id}}" data-index="{{index}}"><image src="/images/delete.png" mode='aspectFill'></image></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="jiesuan-box">
+      <view class="left-price">
+        <!--<view class="all-selected  {{allSelect?'active':''}}" bindtap="bindAllSelect">全选</view>-->
+        <view class="total" hidden="{{noSelect}}">合计：¥ {{totalPrice}}</view>
+      </view>
+      <view class="to-pay-btn {{noSelect?'no-select':''}}" bindtap="{{noSelect?'':'toPayOrder'}}">去结算</view>
+    </view>
+
+  </view>
+</view>

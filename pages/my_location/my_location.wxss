@@ -1,0 +1,66 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+  width: 750rpx;
+}
+/*.W750{width: 750rpx;}*/
+/*.W710{*/
+  /*width:710rpx;*/
+  /*margin:0 auto;*/
+/*}*/
+/*.list{*/
+  /*padding:20rpx 0;*/
+  /*background: #fff;*/
+/*}*/
+/*.c9{color:#999;}*/
+/*.mab20R{margin-bottom:20rpx;}*/
+.footer{
+  width:750rpx;
+  height:100rpx;
+  line-height:100rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background:#000;
+  color:#fff;
+  text-align: center;
+}
+
+.address_List{
+  border-bottom: 1px solid #ddd;
+  align-items:center;
+  justify-content:space-between;
+}
+.address_List:last-child{
+  /* border-bottom: 0; */
+}
+.address_List radio{
+  margin-right: 20rpx;
+  transform:scale(0.7);
+  margin-top: 20rpx;
+}
+.address_List .cen{
+  width:80%;
+}
+.address_List .cen .top text{
+  font-size: 30rpx;
+  padding-right: 20rpx;
+}
+.address_List .cen .down{
+  font-size: 30rpx;
+  color: #999;
+  text-align: justify;
+}
+.address_List .right image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 25rpx;
+  margin-right: 20rpx
+}
+.bnt{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+}

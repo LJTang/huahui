@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="head_IMG"><image src="/images/list1.png"></image></view>
+
+  <view class="bgFFF">
+    <view class="W710">
+      <view class="">永恒花永生花</view>
+      <view class="mat20R"><span class="cFF1E56">￥3.3/天</span> <span class="cD9 mal20R f30R" style="text-decoration:line-through">销售价 ￥499</span></view>
+
+      <view class="mat40R">颜色</view>
+      <view class="use_View display_F row mat20R">
+        <view class="use_Btn_O {{selected==true?'active':''}}" bindtap="selectedColor" data-index="0">粉色</view>
+      </view>
+      <view class="mat20R">租期</view>
+      <view class="use_View display_F row mat20R">
+        <view class="use_Btn_O {{activeID==0?'active':''}}" bindtap="tabClick" data-index="0">30天</view>
+        <view class="use_Btn_T {{activeID==1?'active':''}}" bindtap="tabClick" data-index="1">60天</view>
+        <view class="use_Btn_Three {{activeID==2?'active':''}}" bindtap="tabClick" data-index="2">90天</view>
+      </view>
+
+      <view class="mat20R mab10R">押金</view>
+      <view class="cash_Pledge" bindtap="tabClick">￥400租期结束可退</view>
+
+      <view class="mat20R mab10R">预存</view>
+      <view class="prestore" bindtap="tabClick" >￥99租期内扣费</view>
+
+
+      <view class="quantity mat20R">购买数量 <span class="minus" bindtap="decrease"> - </span><span class="text">{{hua_Number}}</span><span class="jia" bindtap="appendBlock">+</span> 库存99件</view>
+
+      <view class="list_Box mat20R">
+        <view class="mat10R"><image src="/images/list1.png"></image></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="mat100R"></view>
+  <view class="footer center display_F row">
+    <view class="home" bindtap="jump_Home">
+      <view style="height:50rpx;"><image src="/images/nav/tuijian2.png"></image></view>
+      <view><span>推荐</span></view></view>
+    <view class="foot_Btn mai" bindtap="">立即购买</view>
+    <view class="foot_Btn zu" bindtap="jump_ZuHua">立即租花</view>
+  </view>
+</view>

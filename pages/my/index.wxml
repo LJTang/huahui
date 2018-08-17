@@ -1,0 +1,70 @@
+<view class="container">
+  <view hidden="{{userInfo}}">
+    <view class="center">
+      <!--<image src="/images/qr_code.png" style="width:200px; height:80px;" mode='aspectFill'></image>-->
+      <view class="center mat30">花永恒永生花</view>
+      <view class="c5E f12 mat50">为了你的账户安全，请先验证手机进行登录</view>
+      <view class="denglu"><button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信用户快捷登录</button></view>
+    </view>
+  </view>
+  <view hidden="{{my_UserInfo}}">
+    <view class="my_head" bindtap="nacTo">
+      <view class="head_Left fL"><image class="userinfo-avatar" src="{{imgURL}}" mode='aspectFill'></image></view>
+      <view class="cFFF fL mal40R" style="line-height:200rpx;"><span>{{wxName}}</span></view>
+      <view class="head_Right fR"><image src="/images/qr_code.png" style="width:60rpx; height:60rpx;margin-top:20rpx;" mode='aspectFill'></image></view>
+    </view>
+
+
+    <view class="bgFFF">
+      <navigator url="/pages/my_reservation/my_reservation" hover-class="none">
+        <view class="layout_LR" bindtap="jump_Binding">
+          <view class="layout_Left"><image src="/images/my_reservation.png" mode='aspectFill'></image><span>我的预约</span></view>
+          <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
+        </view>
+      </navigator>
+      <navigator url="/pages/my_order/my_order" hover-class="none">
+        <view class="layout_LR" bindtap="jump_Binding">
+          <view class="layout_Left"><image src="/images/my_order.png" mode='aspectFill'></image><span>我的订单</span></view>
+          <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
+        </view>
+      </navigator>
+      <navigator url="/pages/my_flowers/my_flowers" hover-class="none">
+        <view class="layout_LR" bindtap="jump_Binding">
+          <view class="layout_Left"><image src="/images/zu.png" mode='aspectFill'></image><span>我的租花</span></view>
+          <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
+        </view>
+      </navigator>
+      <navigator url="/pages/coupon/coupon" hover-class="none">
+          <view class="layout_LR">
+          <view class="layout_Left"><image src="/images/coupon.png" mode='aspectFill'></image><span>我的优惠券</span></view>
+          <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
+        </view>
+      </navigator>
+      <!--<navigator url="/pages/balance/balance" hover-class="none">-->
+        <!--<view class="layout_LR">-->
+          <!--<view class="layout_Left"><image src="/images/balance.png" mode='aspectFill'></image><span>我的余额</span></view>-->
+          <!--<view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>-->
+        <!--</view>-->
+      <!--</navigator>-->
+      <!--<navigator url="/pages/cash_pledge/cash_pledge" hover-class="none">-->
+        <!--<view class="layout_LR" bindtap="jump_Binding">-->
+          <!--<view class="layout_Left"><image src="/images/delete.png" mode='aspectFill'></image><span>押金</span></view>-->
+          <!--<view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>-->
+        <!--</view>-->
+      <!--</navigator>-->
+      <navigator url="/pages/my_location/my_location" hover-class="none">
+        <view class="layout_LR" bindtap="jump_Binding">
+          <view class="layout_Left"><image src="/images/address.png" mode='aspectFill'></image><span>地址管理</span></view>
+          <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
+        </view>
+      </navigator>
+
+      <view class="layout_LR" bindtap="onMakePhoneCall">
+        <view class="layout_Left"><image src="/images/kefu_phone.png" mode='aspectFill'></image><span>一键拨号</span></view>
+        <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

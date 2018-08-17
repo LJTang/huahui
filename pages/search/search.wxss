@@ -1,0 +1,102 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+/****** 搜索 *******/
+.search-view{
+  height: 100rpx;
+  background:#e7e7ef;
+  display: flex;
+  flex-direction: column;
+  border-radius:5px 5px;
+}
+.search-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:710rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  border-radius:5px 5px;
+}
+.search-icon{
+  width: 40rpx;
+  height:50rpx;
+  margin-left:10rpx;
+  margin-right: 20rpx;
+}
+.search-input{
+  width:575rpx;
+}
+.weui-icon-clear{
+width:45rpx;
+margin-right: 20rpx;
+}
+.weui-icon-clear icon{margin-top:50rpx;}
+/********** 搜索历史 ************/
+.search_History{margin-top:40rpx;}
+.search_History .layout_LR,.search_Hot .layout_LR{
+  height:80rpx;
+  line-height:80rpx;
+}
+.search_History .layout_LR image{
+  margin-top:10rpx;
+}
+.search_History_List{
+  display: flex;
+  border-bottom:1rpx solid #d9d9d9;
+  padding-bottom:60rpx;
+}
+.search_History_List>view,.search_Hot_List>view{
+  padding:6rpx 16rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  background:#d9d9d9;
+}
+/**********************/
+.search_Criteria{
+  display: flex;
+  flex-direction: row;
+}
+.search_Criteria view{
+  padding-right:20rpx;
+  margin-right:20rpx;
+  font-size:30rpx;
+}
+.search_Criteria .times image,.price image{
+  width:9px;
+  height:18px;
+}
+.vertical_Moulding{
+  width:1px;
+  background:#999;
+  display:inline-block;
+  height:30rpx;
+  vertical-align:middle;
+  margin-left:40rpx;
+}
+.filtrate image{
+   width:15px;
+   height:14px;
+ }
+.list_Box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list{
+  width:345rpx;
+  margin-left:20rpx;
+  margin-bottom:20px;
+}
+.list image{
+  width:345rpx;
+  height:300rpx;
+}
+.v_align_M{vertical-align:middle;}
+

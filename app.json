@@ -1,0 +1,78 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    "pages/product_details/product_details",
+    "pages/my/index",
+    "pages/my_order/my_order",
+    "pages/logs/logs",
+    "pages/vip/vip",
+    "pages/choose_details/choose_details",
+    "pages/choose/choose",
+    "pages/DIY/DIY",
+    "pages/shopping/shopping",
+    "pages/merchandise/merchandise",
+    "pages/my_location/my_location",
+    "pages/zuhua/zuhua",
+    "pages/zuhua_details/zuhua_details",
+    "pages/stay_play/stay_play",
+    "pages/search/search",
+    "pages/filtrate/filtrate",
+    "pages/DIY_area/DIY_area",
+    "pages/yuyue/yuyue",
+    "pages/shalong/shalong",
+    "pages/shalong_details/shalong_details",
+    "pages/new_address/new_address",
+    "pages/make_sure_order/make_sure_order",
+    "pages/balance/balance",
+    "pages/cash_pledge/cash_pledge",
+    "pages/coupon/coupon",
+    "pages/my_reservation/my_reservation",
+    "pages/booking_details/booking_details",
+    "pages/yuyue_more/yuyue_more",
+    "pages/flowers_more/flowers_more",
+    "pages/my_flowers/my_flowers"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "花永恒永生花",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#333",
+    "borderStyle": "#999",
+    "backgroundColor": "#fff",
+    "box-shadow":"0 0 6px 0",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/nav/tuijian.png",
+      "selectedIconPath": "images/nav/tuijian2.png",
+      "text": "推荐"
+    }, {
+      "pagePath": "pages/choose/choose",
+      "iconPath": "images/nav/choose.png",
+      "selectedIconPath": "images/nav/choose2.png",
+      "text": "选购"
+    },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "iconPath": "images/nav/shopping.png",
+        "selectedIconPath": "images/nav/shopping2.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/DIY/DIY",
+        "iconPath": "images/nav/diy.png",
+        "selectedIconPath": "images/nav/diy.png",
+        "text": "DIY"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my.png",
+        "selectedIconPath": "images/nav/my2.png",
+        "text": "我的"
+      }]
+  }
+}

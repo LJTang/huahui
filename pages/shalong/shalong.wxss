@@ -1,0 +1,45 @@
+.container{
+  background:#fff;
+  margin: 0;
+  padding: 0;
+}
+.W710{
+  width:710rpx;
+  margin:0 auto;
+}
+.layout_LR{
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*flex-wrap: wrap;*/
+  width:750rpx;
+  padding:20rpx 0;
+  border-bottom:1rpx solid #ccc;
+}
+.layout_LR .layout_Left{
+  width:220rpx;
+  margin-left: 20rpx;
+}
+.layout_Left image{
+  width:220rpx;
+  height:240rpx;
+}
+.layout_LR .layout_Right{
+  width:470rpx;
+  text-align: left;
+  font-size:34rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+}
+.layout_LR .layout_Right .btn{
+  width:160rpx;
+  height:70rpx;
+  line-height:70rpx;
+  background:#000;
+  color:#fff;
+  text-align:center;
+  border-radius:5px;
+  float: right;
+}
+.v_align_M{vertical-align:middle;}
+.cC{color:#ccc;}
+

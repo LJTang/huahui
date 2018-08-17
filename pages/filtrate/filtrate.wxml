@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="W710" hidden="{{view_Boole==false?true:false}}">
+    <view class="search_History">
+      <view class="layout_LR">
+        <view class="layout_Left">分类</view>
+        <view class="layout_Right"></view>
+      </view>
+      <view class="search_History_List">
+        <view>鲜花</view>
+        <view>鲜花</view>
+        <view>鲜花</view>
+      </view>
+    </view>
+
+    <view class="search_History">
+      <view class="layout_LR">
+        <view class="layout_Left">分类</view>
+        <view class="layout_Right"></view>
+      </view>
+      <view class="search_History_List">
+        <view>鲜花</view>
+        <view>鲜花</view>
+        <view>鲜花</view>
+      </view>
+    </view>
+
+    <view class="search_Hot">
+      <view class="layout_LR">
+        <view class="layout_Left">热门标签</view>
+        <view class="layout_Right"></view>
+      </view>
+      <view class="search_Hot_List display_F">
+        <view>鲜花</view>
+        <view>鲜花</view>
+        <view>鲜花</view>
+      </view>
+    </view>
+  </view>
+
+<view class="footer">
+  <view class="foot_Btn display_F">
+    <view class="reset disabled">重置筛选选项</view>
+    <view class="ok_Btn">确定</view>
+  </view>
+</view>
+</view>

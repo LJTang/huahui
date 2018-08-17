@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="W710">
+    <view class="search-view">
+      <view class="search-content">
+        <icon class="search-icon" type="search" size="20"/>
+        <!--<input placeholder="请输入搜索内容" value="{{inputVal}}" type="search" class="search-input" maxlength="30" confirm-type="search" bindinput='getFocus' bindconfirm='searchBtn'>-->
+        <input placeholder="请输入搜索内容" value="{{inputVal}}" type="search" class="search-input" maxlength="20" confirm-type="search" bindinput='getFocus' bindconfirm='searchBtn' focus='true'/>
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="20"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="W710" hidden="{{view_Boole==false?true:false}}">
+    <view class="search_History">
+      <view class="layout_LR">
+        <view class="layout_Left">最近搜索过的商品</view>
+        <view class="layout_Right"><image src="/images/delete.png"></image></view>
+      </view>
+      <view class="search_History_List">
+        <block wx:for="{{hot}}" wx:key="{{index}}">
+          <view bindtap="onSearch" data-text="{{item}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+
+    <view class="search_Hot">
+      <view class="layout_LR">
+        <view class="layout_Left">热门搜索</view>
+        <view class="layout_Right"></view>
+      </view>
+      <view class="search_Hot_List display_F">
+        <block wx:for="{{hot}}" wx:key="{{index}}">
+          <view bindtap="onSearch" data-text="{{item}}">{{item}}</view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+
+  <view hidden="{{view_Boole==true?true:false}}">
+    <view class="W710">
+      <view>
+        <!--<view class="mat20 f20 font_W">{{title}}</view>-->
+        <view class="search_Criteria pab10 display_F row mat20">
+          <view class="times" bindtap="time_TabClick" data-index="0"><span class="v_align_M">上新时间</span> <image class="v_align_M mal10R" src="{{imgURL}}"></image><span class="vertical_Moulding"></span></view>
+          <view class="price" bindtap="price_TabClick" data-index="1"><span class="v_align_M">价格</span> <image class="v_align_M mal10R" src="{{imgURL2}}"></image><span class="vertical_Moulding"></span></view>
+          <view class="filtrate" bindtap="p" data-index="2"><span class="v_align_M">筛选</span> <image class="v_align_M mal10R" src="/images/shape.png"></image></view>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y style="height:{{height}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
+        <view class="list_Box mat10">
+          <block wx:for="{{goods}}" wx:for-item="goods" wx:key="index">
+            <view class="list" bindtap="jump_Details" data-id="{{goods.id}}">
+              <image src="{{list_IMGURL}}{{goods.goods_img}}" mode='aspectFill'></image>
+              <view class="c5E">{{goods.goods_name_en}}</view>
+              <view class="c5E">{{goods.goods_name}}</view>
+              <view>¥{{goods.goods_price}}</view>
+            </view>
+          </block>
+          <!--<view class="list" bindtap="jump">-->
+            <!--<image src="/images/list1.png"></image>-->
+            <!--<view class="c5E">THE BEAST</view>-->
+            <!--<view class="c5E">我们的幸福</view>-->
+            <!--<view>¥520.00</view>-->
+          <!--</view>-->
+        </view>
+
+        <view hidden="true" class="pab20" style="height:40px">
+          <view class="noMoreData" hidden="{{noMoreHidden}}">没有更多了</view>
+          <!--<view class="inLoad pat20 pab20" hidden="{{inLoadHidden}}"><image src="/images/loading.gif"></image><span>加载中...</span></view>-->
+          <view class="toLoadMore" hidden="{{loadMoreHidden}}" bindtap="onGetConnect">加载更多</view>
+        </view>
+      </scroll-view>
+
+  </view>
+
+</view>

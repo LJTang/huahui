@@ -1,0 +1,62 @@
+<view class='head'wx:if="{{strData.handler_id==1}}">
+  <view class='top cf'><image class='fl' src='/images/stay_play_cancel.png'></image><text class='fl'>待支付</text></view>
+  <view class='text'>您的订单还未支付，订单将在{{clock}}后取消</view>
+</view>
+
+<view class='yuyue'>
+  <view class='title'>预约信息</view>
+  <view class='list_box'>
+    <view><text>预约人：</text><text>{{strData.consignee}}</text></view>
+    <view><text>联系电话：</text><text>{{strData.mobile}}</text></view>
+    <view><text>上课人数：</text><text>{{strData.number}}位</text></view>
+    <view><text>上课地址：</text><text>{{strData.class_address}}</text></view>
+    <view><text>上课时间：</text><text>{{strData.class_time}}</text></view>
+  </view>
+</view>
+
+<view class='yuyue'>
+  <view class='title'>订单信息</view>
+  <view class='list_box'>
+    <view><text>订单号码：</text><text>{{strData.order_sn}}</text></view>
+    <view><text>下单时间：</text><text>{{strDataTime}}</text></view>
+  </view>
+</view>
+
+<view class='yuyue'>
+  <view class='title title1'>课程信息</view>
+  <block wx:for-items="{{goods}}" wx:key="{{index}}">
+    <view class='cf top p3'>
+      <image class='fl img' src='{{item.goods_img}}'></image>
+      <view class='fl concent'>
+        <view class='name omit'>{{item.goods_name}}</view>
+        <view class='text'>{{item.description}}、极具时代感，在商业运用、生活家居等领域中均...</view>
+        <view class='price cf'><text class='number fl'>×{{item.goods_number}}</text><text class='prices fr'>￥{{item.goods_price}}</text></view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='zongji'>
+  <view class='cf'><text class='fl'>商品总额</text><text class='fr price'>￥{{strData.goods_amount}}</text></view>
+  <view class='cf'><text class='fl'>人数</text><text class='fr'>{{strData.number}}人</text></view>
+  <view class='cf'><text class='fl'>优惠</text><text class='fr'>￥{{strData.bonus}}</text></view>
+  <view class='cf'><text class='fl'>订单总额</text><text class='fr price'>￥{{strData.order_amount}}</text></view>
+</view>
+<!--<view class='zonge cf'>-->
+  <!--<view class='fl left'>订单总额</view>-->
+  <!--<view class='fr right'>￥{{strData.order_amount}}</view>-->
+<!--</view>-->
+<view class='zhifu cf'>
+  <view class='fl yingfu'>应付金额：<text>￥{{strData.order_amount}}</text></view>
+  <!--<view class='go fr' hover-class='none'>去支付</view>-->
+  <view class="display_F row flex_end" wx:if="{{strData.handler_id==1}}">
+    <view class="delete_Order" bindtap="closeOrder">取消订单</view>
+    <view class="go cFFF" bindtap="onPayOrder">去支付</view>
+  </view>
+  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==4}}">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==5}}">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==6}}">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==7}}">{{strData.handler}}</view>
+  <view wx:else></view>
+</view>

@@ -1,0 +1,116 @@
+<!--
+<view class="bgF7 f30R">
+  <view style='margin-bottom:120rpx;'>
+    <view class="head" wx:if="{{times_Bool}}">
+      <view class="mal20R"><image class="" src="/images/stay_play_cancel.png" mode="cover"></image> <text>已取消</text></view>
+      <view class="mal20R mat20R f28R"><text>您的订单还未支付，订单将在{{clock}}后取消</text></view>
+    </view>
+    <view class="head" wx:else>
+      <view class="mal20R"><image class="" src="/images/stay_play_cancel.png" mode="cover"></image> <text>待支付</text></view>
+      <view class="mal20R mat20R f28R"><text>您的订单还未支付，订单将在{{clock}}后取消</text></view>
+    </view>
+
+      <view class="goods_Information border_T border_B"><span class="mal20R f32R">收货信息</span></view>
+      <view class="goods_Information_Content bgFFF" bindtap="jump_Location">
+        <view class="mal20R pat20R c9">收货人：<text class="mal20R">{{strData.consignee}}</text></view>
+        <view class="mal20R mat10R c9">联系电话：<text>{{strData.mobile}}</text></view>
+        <view class="mal20R mat10R">收货地址：<text>{{strData.city}}</text></view>
+      </view>
+
+      <view class="goods_Information mat20R border_T border_B"><span class="mal20R f32R">订单信息</span></view>
+      <view class="goods_Information_Content bgFFF">
+        <view class="mal20R pat20R">订单号：<text class="mal20R">{{strData.order_sn}}</text></view>
+        <view class="mal20R mat10R">下单时间：<text>{{strDataTime}}</text></view>
+      </view>
+
+      <view class="bgFFF">
+        <view class="goods_Information mat20R border_T"><span class="mal20R f32R">商品信息</span></view>
+        <block wx:for-items="{{goods}}" wx:key="{{index}}">
+          <view class="all_List">
+            <view class="all_List_top">
+              <view class="img"><image class="" src="{{item.goods_img}}"></image></view>
+              <view class="text_Description">
+                <view>{{item.goods_name_en}}</view>
+                <view>{{item.goods_name}}</view>
+              </view>
+              <view class="price">
+                <view style="color:#fff;">1<span class="f28R"></span></view>
+                 <view style="">￥{{item.goods_price}}<span class="f28R"></span></view>
+                <view class="">{{item.goods_number}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class="commodity">
+          <view class=""><span class="fL c9">商品总额</span><span class="fR">￥{{strData.goods_amount}}</span></view>
+          <view class="total_Order"><span class="fL c9">订单总额</span><span class="fR">￥{{strData.goods_amount}}</span></view>
+        </view>
+      </view>
+  </view>
+  <view class="footer">
+    <view class="footer_Btn">
+      <view class="fL mal20R"><span class="c9">应付金额：</span><span class="goods_State">￥{{strData.order_amount}}</span></view>
+      <view class="delete_Order fR" bindtap="onPayOrder" wx:if="{{strData.order_status==2}}">删除订单</view>
+      <view class="delete_Order fR" bindtap="onPayOrder" wx:else>去支付</view>
+    </view>
+  </view>
+</view>
+-->
+
+<view class='head'wx:if="{{strData.handler_id==1}}">
+<!--<view class='head'>-->
+  <view class='top cf'><image class='fl' src='/images/stay_play_cancel.png'></image><text class='fl'>待支付</text></view>
+  <view class='text'>您的订单还未支付，订单将在{{clock}}后取消</view>
+</view>
+
+<view class='yuyue'>
+  <view class='title'>收货信息</view>
+  <view class='list_box'>
+    <view><text>收货人：</text><text>{{strData.consignee}}</text></view>
+    <view><text>联系电话：</text><text>{{strData.mobile}}</text></view>
+    <view><text>收货地址：</text><text>{{strData.city}}{{strData.address}}</text></view>
+  </view>
+</view>
+
+<view class='yuyue'>
+  <view class='title'>订单信息</view>
+  <view class='list_box'>
+    <view><text>订单号码：</text><text>{{strData.order_sn}}</text></view>
+    <view><text>下单时间：</text><text>{{strDataTime}}</text></view>
+  </view>
+</view>
+
+<view class='yuyue'>
+  <view class='title title1'>租花信息</view>
+  <block wx:for-items="{{goods}}" wx:key="{{index}}">
+    <view class='cf top p3'>
+      <image class='fl img' src='{{item.goods_img}}'></image>
+      <view class='fl concent'>
+        <view class='name omit'>{{item.goods_name}}</view>
+        <view class='text'>{{item.description}}、极具时代感，在商业运用、生活家居等领域中均...</view>
+        <view class='price cf'><text class='number fl'>×{{item.goods_number}}</text><text class='prices fr'>￥{{item.goods_price}}</text></view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='zongji'>
+  <view class='cf'><text class='fl'>商品总额</text><text class='fr price'>￥{{strData.goods_amount}}</text></view>
+  <!--<view class='cf'><text class='fl'>人数</text><text class='fr'>{{strData.number}}人</text></view>-->
+  <view class='cf'><text class='fl'>优惠</text><text class='fr'>￥{{strData.bonus}}</text></view>
+  <view class='cf'><text class='fl'>订单总额</text><text class='fr price'>￥{{strData.order_amount}}</text></view>
+</view>
+
+<view class='zhifu cf'>
+  <view class='fl yingfu'>应付金额：<text>￥{{strData.order_amount}}</text></view>
+  <view class="display_F row flex_end" wx:if="{{strData.handler_id==1}}">
+    <view class="delete_Order" bindtap="closeOrder">取消订单</view>
+    <view class="go" bindtap="onPayOrder">去支付</view>
+  </view>
+  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==4}}">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==5}}">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==6}}">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==7}}">{{strData.handler}}</view>
+  <view wx:else></view>
+</view>

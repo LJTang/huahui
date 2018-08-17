@@ -1,0 +1,19 @@
+<view class="container" >
+  <view class="center">
+    <view class="balance_Y"><view>￥</view></view>
+    <view class="mat20 c68">租花押金</view>
+    <view class="balance_Number">299.00</view>
+    <view class="balance_Btn">去zf</view>
+      <!--<view class="vip_BoxQR" hidden="{{show_Bool}}">-->
+        <!--<view class="mat10" style="height:60rpx;">-->
+          <!--<view class="mat20R mar20R fR" bindtap="close"><image class="fR" style="width:15px; height:13px;" src="/images/vip_clear.png"></image></view></view>-->
+        <!--<view class="mat20">会员二维码</view>-->
+        <!--<image class="mat20" style="width:120px; height:80px;"></image>-->
+        <!--<view class="mat20 f14 c5E">-->
+          <!--<view>请在实体店自助结账时使用</view>-->
+          <!--<view>或出示给店员</view></view>-->
+      <!--</view>-->
+    <!--</view>-->
+  </view>
+
+</view>

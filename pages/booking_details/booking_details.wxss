@@ -1,0 +1,197 @@
+.denglu{
+  width:650rpx;
+  height:40px;
+  line-height:40px;
+  margin: 10px auto;
+  background:#000;
+  color:#fff;
+}
+.denglu button{
+  background: #000;
+  border: none;
+  padding:0;
+  color:#fff;
+  border-radius:0;
+}
+.verificationCode{
+  width:650rpx;
+  height:40px;
+  line-height:40px;
+  margin:0 auto;
+  border:1px solid #5e5e5e;
+}
+
+.head{
+  height:200rpx;
+  display:block;
+  background:#000;
+  color: #fff;
+  font-size:34rpx;
+}
+
+.head image{
+  width: 60rpx;
+  height:60rpx;
+  margin-right:20rpx;
+  vertical-align:middle;
+}
+.head>view:first-child{
+  padding-top:40rpx;
+}
+.goods_Information{
+  height: 80rpx;
+  line-height:80rpx;
+  background:#fff;
+  margin-top: 20rpx;
+}
+.border_T{border-top:1px solid #ccc;}
+.border_B{border-bottom:1px solid #ccc;}
+.c9{color:#999;}
+.goods_Information_Content{
+  padding-bottom:20rpx;
+}
+/*********************************/
+.unpaid_Remind{
+  height:80rpx;
+  line-height:80rpx;
+  width: 750rpx;
+  border-bottom:1px solid #ccc;
+}
+.unpaid_Remind .fR{color:#ed9f9d;}
+.c0{color:#000;}
+.c3{color:#333;}
+.f28R{font-size:28rpx;}
+
+.all_List{margin-bottom:20rpx;}
+.all_List .all_List_top{
+  background: #fff;
+  padding:20rpx 0;
+  display: flex;
+  flex-direction: row;
+}
+.all_List .img{
+  width:200rpx;
+  height:180rpx;
+  margin-left: 20rpx;
+}
+.all_List .img image{
+  width:200rpx;
+  height:180rpx;
+}
+.all_List .text_Description{
+  width:490rpx;
+  margin-left:20rpx;
+  position:relative;
+  font-size:36rpx;
+}
+.all_List .price{
+  width:180rpx;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+  text-align: right;
+}
+.all_List .price .goods_State{color: #ed9f9d;}
+.all_List .goods_Numbwe{
+  position: relative;
+  top:-25rpx;
+  right: 0;
+}
+.for_Goods .goods_Numbwe,.goods_Deal .goods_Numbwe{
+  position: relative;
+  top:60rpx;
+  right: 0;
+}
+.all_List .total_Money{
+  height:80rpx;
+  line-height:80rpx;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+.commodity{padding-top:20rpx;}
+.commodity>view{
+  height:60rpx;
+  line-height:60rpx;
+}
+.commodity .total_Order{
+  height:100rpx;
+  line-height:100rpx;
+  border-top:1rpx solid #ccc;
+}
+.total_Order{border-bottom:1rpx solid #ccc;}
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:750rpx;
+  background:#fff;
+  font-size:32rpx;
+}
+ .footer .footer_Btn{
+   height:100rpx;
+   line-height:100rpx;
+   /* border-top:1rpx solid #999; */
+   justify-content:space-between;
+ }
+ .footer .play{
+  width: 200rpx;
+  height:68rpx;
+  line-height:70rpx;
+  background:#424649;
+  color: #fff;
+  text-align: center;
+  border:1rpx solid #424649;
+  margin-right:20rpx;
+   margin-top: 15rpx;
+}
+.footer .delete_Order{
+  width: 200rpx;
+  height:68rpx;
+  line-height:70rpx;
+  background:#fff;
+  border:1rpx solid #000;
+  text-align: center;
+  color: #000;
+  margin-right:20rpx;
+  margin-top: 15rpx;
+}
+.footer .order_Pay{
+  width: 200rpx;
+  height:68rpx;
+  line-height:70rpx;
+  background:#000;
+  text-align: center;
+  color: #fff;
+  margin-right:20rpx;
+  margin-top: 15rpx;
+  border:1rpx solid #000;
+}
+.footer .goods_Amount{}
+/*********************************/
+.no_Order{
+  width: 500rpx;
+  margin:30px auto;
+  height:100px;
+}
+.no_Order image{
+  width: 300rpx;
+  height:200rpx;
+}
+.goods_Price{
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+.goods_Price .fL{
+  font-size:30rpx;
+  color:#ccc;
+  position: absolute;
+  bottom: 0;
+}
+
+.goods_Price .fR{
+  font-size:36rpx;
+}
+.cC{color:#ccc;}
+.f36R{font-size:36rpx;}
+
+
