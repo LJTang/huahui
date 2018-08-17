@@ -14,6 +14,7 @@ Page({
         loadMoreHidden: true,
         inLoadHidden: false,
         order_id:[],
+        order_sm:'',
         goods:[],
         strData:'',
         strDataTime:'',
@@ -45,6 +46,7 @@ Page({
         if(data.code==200){
             this.setData({
                 strData:data.data.order_detail,
+                order_sm:data.data.order_detail.order_sn,
                 strDataTime:GMAPI.formatTime(data.data.order_detail.add_time,'Y-M-D h:m:s'),
                 // strDataTime:GMAPI.formatTime(data.data.order_detail.add_time,'m:s'),
                 goods:data.data.goods_list,
@@ -111,10 +113,93 @@ Page({
             this.globalData.userInfo = e.detail.userInfo;
         }
     },
+    //取消订单
+    closeOrder:function(){
+        var that=this;
+        GMAPI.doSendMsg('user/cancel_order',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:that.data.order_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_CloseOrder);
+    },
+    onMsgCallBack_CloseOrder:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        console.log(data);
+        var that=this;
+        if(data.code==200){
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+            setTimeout(function(){
+                wx.navigateBack({
+                    delta:1
+                });
+            },2000);
+
+        }else{
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+        }
+    },
+    //确认收货
+    onConfirmReceipt:function(e){
+        var that=this;
+        GMAPI.doSendMsg('user/affirm_received',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_ConfirmReceipt);
+    },
+    onMsgCallBack_ConfirmReceipt:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        console.log(data);
+        var that=this;
+        if(data.code==200){
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+
+            wx.navigateBack({
+                delta:1
+            });
+        }else{
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+        }
+    },
+//退款
+    onRefund:function(e){
+        var that=this;
+        GMAPI.doSendMsg('user/back_order',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Refund);
+    },
+    onMsgCallBack_Refund:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        console.log(data);
+        var that=this;
+        if(data.code==200){
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+
+            wx.navigateBack({
+                delta:1
+            });
+        }else{
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+        }
+    },
     onPayOrder:function(){
         wx.showLoading();
         var that=this;
-        GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:that.data.order_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Pay);
+        GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:that.data.order_sm,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Pay);
 
     },
     onMsgCallBack_Pay:function (jsonBack){
@@ -129,16 +214,12 @@ Page({
                 'signType': data.data.signType,
                 'paySign':data.data.paySign,
                 'success': function (res) {
-                    wx.showToast({
-                        title:data.msg,
-                        icon:'none',
-                        duration: 2000
-                    });
                     if (res.errMsg = 'requestPayment:ok') {
                         wx.switchTab({
                             url: '/pages/my_index/my_index'
                         })
                     } else {
+                        console.log('未支付');
                     }
                 },
                 'fail': function (res) {
@@ -150,9 +231,7 @@ Page({
                     });
                 },
                 'complete': function (res) {
-                    // wx.showLoading({
-                    //     title: '222...'
-                    // });
+
                 }
             })
         }else{

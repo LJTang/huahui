@@ -66,6 +66,7 @@ page{height:100%;}
 .bgF5{background:#f5f5f5;}
 .bgF7{background:#f7f7f7;}
 .cFFF{color:#fff;}
+.cF00{color:#f00;}
 .c5E{color:#5e5e5e;}
 
 .fL{float: left;}

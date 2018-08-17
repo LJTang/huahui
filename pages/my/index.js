@@ -105,7 +105,7 @@ Page({
     onMakePhoneCall:function (){
         var that=this;
         wx.makePhoneCall({
-            phoneNumber: '17521107021'
+            phoneNumber:app.data.kefu_Phone
         })
     },
 });

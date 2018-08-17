@@ -47,7 +47,6 @@ Page({
             this.setData({
                 strData:data.data.order_detail,
                 strDataTime:GMAPI.formatTime(data.data.order_detail.add_time,'Y-M-D h:m:s'),
-                // strDataTime:GMAPI.formatTime(data.data.order_detail.add_time,'m:s'),
                 goods:data.data.goods_list,
                 times:data.data.order_detail.end_time
             });
@@ -191,9 +190,9 @@ Page({
     },
 
     //确认收货
-    onConfirmReceipt:function(){
+    onConfirmReceipt:function(e){
         var that=this;
-        GMAPI.doSendMsg('user/affirm_received',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:that.data.order_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_ConfirmReceipt);
+        GMAPI.doSendMsg('user/affirm_received',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_ConfirmReceipt);
     },
     onMsgCallBack_ConfirmReceipt:function (jsonBack){
         var data=JSON.parse(jsonBack.data);
@@ -218,9 +217,9 @@ Page({
         }
     },
     //退款
-    onRefund:function(){
+    onRefund:function(e){
         var that=this;
-        GMAPI.doSendMsg('user/back_order',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:that.data.order_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Refund);
+        GMAPI.doSendMsg('user/back_order',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Refund);
     },
     onMsgCallBack_Refund:function (jsonBack){
         var data=JSON.parse(jsonBack.data);
@@ -245,9 +244,10 @@ Page({
         }
     },
 
-    onOrderPay:function () {
+    onOrderPay:function (e) {
+
         var that=this;
-        GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:that.data.order_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_OrderPay);
+        GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_OrderPay);
     },
     onMsgCallBack_OrderPay:function (jsonBack){
         var data=JSON.parse(jsonBack.data);

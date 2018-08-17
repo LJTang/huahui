@@ -1,6 +1,7 @@
 //app.js
 App({
     data:{
+      kefu_Phone:'',
       apiURL:'https://hua.guangzhoubaidu.com/api/',
       imgURL:'http://hua.guangzhoubaidu.com'
     },

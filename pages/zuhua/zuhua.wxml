@@ -25,7 +25,7 @@
             <view class="text_Description">
               <view>{{strData.goods_name}}</view>
               <view>{{strData.attr}}</view>
-              <!--<view class="c9">预售：</view>-->
+              <view class="c9">{{strData.delivery_zt}}</view>
             </view>
             <view class="price">
               <view class="cE4" style="line-height:130rpx;">￥{{strData.goods_price}}<span class="f28R"></span></view>
@@ -58,7 +58,7 @@
     </view>
     <view class="bgFFF mat20R" style="margin-bottom:120rpx;">
       <view class="commodity">
-        <view class=""><span class="fL c9">商品总额</span><span class="fR cE4">￥{{amount}}</span></view>
+        <view class=""><span class="fL c9">商品总额</span><span class="fR cE4">￥{{amount_Pay}}</span></view>
         <!--<view class=""><span class="fL c9">运费</span><span class="fR">￥14525544</span></view>-->
         <!--<view class=""><span class="fL c9">实付99元免运费</span><span class="fR">￥14525544</span></view>-->
       </view>

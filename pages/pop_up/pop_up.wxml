@@ -20,7 +20,8 @@
                 <!--<view class="up_List" bindtap="onClickValue" data-id="" data-money="0">不使用红包</view>-->
                 <!--<icon class="pop_Clear" type="clear" size="30" bindtap="close_Pop"></icon>-->
                 <icon class="pop_Clear" type="clear" size="30" bindtap="close_Pop"></icon>
-                <view class="centerBox" style="padding:20px 0 50px 0;">
+                <view class="center">选择可用优惠券</view>
+                <view class="centerBox" style="padding:10px 0 50px 0;">
                     <view class="store_Coupon_Box center mat20R" style="background:{{item.color}};" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}" bindtap="onClickValue">
                         <view class="cFFF f30R">{{item.bouns_name}}</view>
                         <view class="cFFF pat10R pab10R"><span class="v_align_T f28R">¥</span>{{item.bonus_money}}{{width}}</view>

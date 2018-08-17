@@ -33,7 +33,7 @@
                 <view class="mal20R">共{{goodsItem.count}}件商品，共计￥<span class="c0 mar20R f34R">{{goodsItem.goods_amount}}</span></view>
                 <view class="operation">
                   <view class="view_Information" bindtap="jump_StayPlay" data-id="{{goodsItem.order_id}}">查看详情</view>
-                  <view wx:if="{{goodsItem.handler_id==1}}" bindtap="onOrderPay" class="play mal20R" data-id="{{goodsItem.order_id}}">去支付</view>
+                  <view wx:if="{{goodsItem.handler_id==1}}" bindtap="onOrderPay" class="play mal20R" data-id="{{goodsItem.order_sn}}">去支付</view>
                   <view wx:elif="{{goodsItem.handler_id==2}}" bindtap="onConfirmReceipt" class="play mal20R" data-id="{{goodsItem.order_id}}">确认上课</view>
                   <view wx:elif="{{goodsItem.handler_id==3}}" bindtap="onRefund" class="play mal20R" data-id="{{goodsItem.order_id}}">申请退款</view>
                   <view wx:else></view>
@@ -43,11 +43,6 @@
             </view>
           </block>
 
-        </view>
-        <view hidden="true" class="pab20" style="height:40px">
-          <view class="noMoreData" hidden="{{noMoreHidden}}">没有更多了</view>
-          <!--<view class="inLoad pat20 pab20" hidden="{{inLoadHidden}}"><image src="/images/loading.gif"></image><span>加载中...</span></view>-->
-          <view class="toLoadMore" hidden="{{loadMoreHidden}}" bindtap="onGetConnect">加载更多</view>
         </view>
       </view>
     </scroll-view>

@@ -85,7 +85,7 @@ Page({
             success: function(res) {
                 var rpx=(res.windowWidth / 750);
                 that.setData({
-                    height:res.windowHeight-50-(480*rpx),
+                    height:res.windowHeight-100-(480*rpx),
                     goodsID:option.id
                 });
             }
@@ -259,12 +259,12 @@ Page({
             }
         }
         this.setData({
-            attr_id: ide
+            attr_id:(list.length==0?'':ide)
         });
 
         var json = {
             user_id: wx.getStorageSync('strWXID').strUserID,
-            attr_id: ide,
+            attr_id:(list.length==0?'':ide),
             goods_id: that.data.goods_id,
             type: statu,
             goods_number: that.data.hua_Number,
@@ -359,7 +359,7 @@ Page({
     //拨打客服
     onMakePhoneCall:function (){
         wx.makePhoneCall({
-            phoneNumber: '17521107021'
+            phoneNumber:app.data.kefu_Phone
         })
     },
 /**************************************/

@@ -23,6 +23,7 @@ Page({
         bonus_id:'',
         checkboxValue:0,
         amount:0,
+        amount_Pay:0,
         money:0,
         goods_use:'居家自用',
         pop_Bool:true,
@@ -59,20 +60,8 @@ Page({
     },
     onShow: function(){
         var that=this;
-        var json={user_id:wx.getStorageSync('strWXID').strUserID,attr_id:that.data.strData.attr_id,goods_id:that.data.strData.id,type:that.data.strData.type_id,goods_number:that.data.strData.goods_number,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID};
+        var json={user_id:wx.getStorageSync('strWXID').strUserID,attr_id:(that.data.strData.attr_id.length==0?'':that.data.strData.attr_id),goods_id:that.data.strData.id,type:that.data.strData.type_id,goods_number:that.data.strData.goods_number,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID};
         GMAPI.doSendMsg('flow/zj_buy',json,'POST',that.onMsgCallBack_NewOrder);
-
-        // GMAPI.doSendMsg('user/my_coupon',{user_id:wx.getStorageSync('strWXID').strUserID,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Coupon);
-
-        // var numb=(wx.getStorageSync('direct_purchase').data.bonus_list.length==0?0:wx.getStorageSync('direct_purchase').data.bonus_list[0].bonus_money);
-        // this.setData({
-        //     strData:wx.getStorageSync('direct_purchase').data,
-        //     // attr_id:wx.getStorageSync('direct_purchase').data.attr_id,
-        //     bonus_money:numb,
-        //     address:wx.getStorageSync('direct_purchase').data.address_list,
-        //     bonus_list:wx.getStorageSync('direct_purchase').data.bonus_list,
-        //     amout:wx.getStorageSync('direct_purchase').data.goods_price-numb,
-        // });
 
     },
     onMsgCallBack_NewOrder:function(jsonBack){
@@ -92,6 +81,7 @@ Page({
                 address:data.data.address_list,
                 bonus_list:data.data.bonus_list,
                 amount:data.data.amount-numb,
+                amount_Pay:data.data.amount
             });
 
         }else{
@@ -245,7 +235,6 @@ Page({
                 'signType': data.data.signType,
                 'paySign':data.data.paySign,
                 'success': function (res) {
-                    console.log(res)
                     if (res.errMsg = 'requestPayment:ok') {
                         wx.switchTab({
                             url: '/pages/my/index'
@@ -257,7 +246,9 @@ Page({
                     }
                 },
                 'fail': function (res) {
-
+                    wx.switchTab({
+                        url: '/pages/my/index'
+                    })
                 },
                 'complete': function (res) {
 

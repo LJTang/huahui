@@ -28,7 +28,7 @@ Page({
             success: function (res) {
                 var rpx=(res.windowWidth / 750);
                 that.setData({
-                    height: res.windowHeight - 51
+                    height: res.windowHeight - 51,
                 });
 
             }
@@ -80,7 +80,7 @@ Page({
         if(data.code==200){
             that.setData({
                 isData:data.data.order_list.length,
-                goods:data.data.order_list
+                goods:data.data.order_list,
             });
 
         }else{
@@ -132,6 +132,100 @@ Page({
                 key: 'strWXID',
                 data: {sessionID:strData.data.session_id,strWXOpenID:strData.data.open_id,strUserID:strData.data.user_id}
             });
+        }else{
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+        }
+    },
+    //确认收货
+    onConfirmReceipt:function(e){
+        var that=this;
+        GMAPI.doSendMsg('user/affirm_received',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_ConfirmReceipt);
+    },
+    onMsgCallBack_ConfirmReceipt:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        console.log(data);
+        var that=this;
+        if(data.code==200){
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+
+            wx.navigateBack({
+                delta:1
+            });
+        }else{
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+        }
+    },
+//退款
+    onRefund:function(e){
+        var that=this;
+        GMAPI.doSendMsg('user/back_order',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Refund);
+    },
+    onMsgCallBack_Refund:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        console.log(data);
+        var that=this;
+        if(data.code==200){
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+
+            wx.navigateBack({
+                delta:1
+            });
+        }else{
+            wx.showToast({
+                title:data.msg,
+                icon:'none',
+                duration: 2000
+            });
+        }
+    },
+    onOrderPay:function (e) {
+        var that=this;
+        GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_OrderPay);
+    },
+    onMsgCallBack_OrderPay:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        if(data.code==200){
+            wx.requestPayment({
+                'timeStamp': data.data.timeStamp,
+                'nonceStr':data.data.nonceStr,
+                'package': data.data.package,
+                'signType': data.data.signType,
+                'paySign':data.data.paySign,
+                'success': function (res) {
+                    console.log(res)
+                    if (res.errMsg = 'requestPayment:ok') {
+                        wx.switchTab({
+                            url: '/pages/my/index'
+                        })
+                    } else {
+                        wx.switchTab({
+                            url: '/pages/my/index'
+                        })
+                    }
+                },
+                'fail': function (res) {
+
+                },
+                'complete': function (res) {
+
+                }
+            })
         }else{
             wx.showToast({
                 title:data.msg,

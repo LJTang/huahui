@@ -25,7 +25,10 @@ function doSendMsg(url,strMsg,requestWay,funCallback) {
 // 电话号码验证
 function checkPhone(phone){
     if(!(/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,1,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/.test(phone))){
+    // if(!(/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(199))+\d{8})$/.test(phone))){
         return false;
+    }else{
+        return true;
     }
 }
 // 转时间戳

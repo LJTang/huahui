@@ -3,7 +3,8 @@ import GMAPI from "../../script/api";
 const app = getApp();
 Page({
     data: {
-        listID:0,
+        goodsID:0,
+        height:0,
         imgURL:app.data.imgURL,
         parent_Array:[],
         goods:[],
@@ -40,7 +41,14 @@ Page({
     },
     onLoad:function (option) {
         var that=this;
-
+        wx.getSystemInfo({
+            success: function(res) {
+                var rpx=(res.windowWidth / 750);
+                that.setData({
+                    height:res.windowHeight-100-(480*rpx)
+                });
+            }
+        });
     },
     onShow:function (option) {
         var that=this;

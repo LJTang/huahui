@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" style="height:{{height-50}}px;overflow: auto;">
   <!--<view class="arrowType_View display_F row bor_B" bindtap="jump_Location">-->
     <!--<view class="arrowType_Title">送至</view>-->
     <!--<view class="arrowType_Center">请填写收货地址</view>-->
@@ -19,15 +19,15 @@
   <view class="bgFFF W750 mat20R bor_B">
     <view class="arrowType_View display_F row">
       <view class="arrowType_Title">上课地址</view>
-      <view class="arrowType_Center"><input type="text" placeholder="" value="{{lass_address}}" disabled="true"/></view>
-      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+      <view class="arrowType_Center"><input type="text" placeholder="" value="{{strData.class_address}}" disabled="true"/></view>
+      <view class="arrowType_IMG"></view>
     </view>
   </view>
-<view class="bgFFF W750 mat20R bor_B">
+<view class="bgFFF W750">
     <view class="arrowType_View display_F row">
       <view class="arrowType_Title">上课时间</view>
-      <view class="arrowType_Center"><input type="text" placeholder="" value="{{class_time}}" disabled="true"/></view>
-      <view class="arrowType_IMG"><image src="/images/arrow-right.png"></image></view>
+      <view class="arrowType_Center"><input type="text" placeholder="" value="{{strData.class_time}}" disabled="true"/></view>
+      <view class="arrowType_IMG"></view>
     </view>
   </view>
 
@@ -78,7 +78,7 @@
   </view>
 
   <view class="footer center">
-    <view class="amountPayable">应付金额：<span class="cED9F9D mar20R">￥{{amount}}</span></view>
+    <view class="amountPayable">应付金额：<span class="cED9F9D">￥{{amount}}</span></view>
     <view class="foot_Btn" bindtap="onYuYue">确定下单</view>
   </view>
 </view>

@@ -52,11 +52,11 @@
     <view class="delete_Order" bindtap="closeOrder">取消订单</view>
     <view class="go cFFF" bindtap="onPayOrder">去支付</view>
   </view>
-  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">{{strData.handler}}</view>
-  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">确认上课</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">申请退款</view>
   <view class="go fR" wx:elif="{{strData.handler_id==4}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==5}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==6}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==7}}">{{strData.handler}}</view>
-  <view wx:else></view>
+  <view wx:else class="cF00 fR">已取消</view>
 </view>

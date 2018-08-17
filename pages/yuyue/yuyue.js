@@ -46,9 +46,23 @@ Page({
     },
     onYuYue: function(){
         var that=this;
-        var json={user_id:wx.getStorageSync('strWXID').strUserID,attr_id:'',goods_id:that.data.goods_id,type:3,goods_number:that.data.hua_Number,bonus_id:'',name:that.data.yourName,mobile:that.data.phone,remarks:that.data.note,goods_use:'',wx_open_id:wx.getStorageSync('strWXID').strWXOpenID};
-        console.log(json);
-        GMAPI.doSendMsg('flow/zj_buy_order',json,'POST',that.onMsgCallBack_YuYue);
+        if(that.data.yourName==''){
+            wx.showToast({
+                title: '请输入正确的手机号码',
+                icon: 'none',
+                duration:2000
+            });
+        }else if(GMAPI.checkPhone(that.data.phone)==false){
+            wx.showToast({
+                title: '请输入正确的手机号码',
+                icon: 'none',
+                duration:2000
+            });
+        }else{
+            var json={user_id:wx.getStorageSync('strWXID').strUserID,attr_id:'',goods_id:that.data.goods_id,type:3,goods_number:that.data.hua_Number,bonus_id:'',name:that.data.yourName,mobile:that.data.phone,remarks:that.data.note,goods_use:'',wx_open_id:wx.getStorageSync('strWXID').strWXOpenID};
+            GMAPI.doSendMsg('flow/zj_buy_order',json,'POST',that.onMsgCallBack_YuYue);
+        }
+
     },
     onMsgCallBack_Desc:function (jsonBack){
         var that = this;
@@ -79,9 +93,7 @@ Page({
         console.log(data);
         if(data.code==200){
             this.setData({
-                // yuyueData:data.data,
-                // price:data.data.goods_price,
-                // amount:data.data.goods_price
+                yuyueData:data.order_id
             });
             GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:data.order_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Pay);
         }else{
@@ -95,7 +107,7 @@ Page({
     //支付
     onMsgCallBack_Pay:function (jsonBack){
         var data=JSON.parse(jsonBack.data);
-        console.log(data);
+        var that=this;
         if(data.code==200){
             wx.requestPayment({
                 'timeStamp': data.data.timeStamp,
@@ -106,16 +118,18 @@ Page({
                 'success': function (res) {
                     if (res.errMsg = 'requestPayment:ok') {
                         wx.switchTab({
-                            url: '/pages/my_index/my_index'
+                            url: '/pages/my/index'
                         })
-                    } else {
+                    } else{
                         wx.switchTab({
-                            url: '/pages/my_index/my_index'
+                            url: '/pages/my/index'
                         })
                     }
                 },
                 'fail': function (res) {
-
+                    wx.switchTab({
+                        url: '/pages/my/index'
+                    })
                 },
                 'complete': function (res) {
                 }

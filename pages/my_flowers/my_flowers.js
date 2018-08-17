@@ -196,7 +196,6 @@ Page({
 
     onOrderPay:function (e) {
         var that=this;
-        console.log(e.currentTarget.dataset.id)
         GMAPI.doSendMsg('wxpayment/pay',{user_id:wx.getStorageSync('strWXID').strUserID,order_id:e.currentTarget.dataset.id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_OrderPay);
     },
     onMsgCallBack_OrderPay:function (jsonBack){

@@ -53,31 +53,11 @@ Page({
 
             }
         });
-        // console.log(new Date(2017, 6-1, 28, 17, 40, 0))
-        this.data.intervarID= setInterval(function () {
-            var leftTime = (new Date(2018, 8-1, 28, 17, 40, 0)) - (new Date()); //计算剩余的毫秒数
-            var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
-            var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
-            var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
-            var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
-            days = checkTime(days);
-            hours = checkTime(hours);
-            minutes = checkTime(minutes);
-            seconds = checkTime(seconds);
-            that.setData({
-                clock: minutes + "分" + seconds + "秒"
-            });
-            if (days == '00' && hours == '00' && minutes == '00' && seconds=='00') {
-                clearInterval(that.data.intervarID);}
-            },1000);
-
 
     },
     onShow:function(){
         var that=this;
         that.setData({ goods:[]});
-        // GMAPI.doSendMsg('flow/checkinfo',{user_id:wx.getStorageSync('strWXID').strUserID,rec_id:that.data.rec_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Stay);
-        // GMAPI.doSendMsg('checkinfo',{user_id:wx.getStorageSync('strWXID').strUserID,rec_id:that.data.rec_id,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Stay);
         GMAPI.doSendMsg('flow/checkinfo',{user_id:wx.getStorageSync('strWXID').strUserID,rec_id:that.data.rec_id,goods_number:that.data.goods_number,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID},'POST',that.onMsgCallBack_Make);
     },
     onMsgCallBack_Make:function (jsonBack){
@@ -234,12 +214,11 @@ Page({
                     }
                 },
                 'fail': function (res) {
-                    console.log(res);
+                    wx.switchTab({
+                        url: '/pages/my/index'
+                    })
                 },
                 'complete': function (res) {
-                    // wx.showLoading({
-                    //     title: '222...'
-                    // });
                 }
             })
         }

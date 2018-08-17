@@ -2,23 +2,22 @@
 
     <view class="store_coupon mat10">
       <block wx:for="{{coupon}}" wx:key="{{index}}">
-          <view class="box" wx:if="{{item.use=='未使用'}}">
+          <view class="box" wx:if="{{item.time_status=='未过期'}}">
               <view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">
                   <view class="cFFF f30R">{{item.bouns_name}}</view>
                   <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
                   <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
               </view>
-              <view class="usingTips">有效期为2018-08-17 23:00</view>
+              <view class="usingTips">有效期为{{item.end_time}}</view>
           </view>
-          <view class="box" wx:elif="{{item.use=='已使用'}}">
-              <view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">
-                  <view class="cFFF f30R">{{item.bouns_name}}</view>
-                  <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
-                  <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
-              </view>
-              <view class="usingTips">使用日期{{item.used_time}}</view>
-          </view>
-
+          <!--<view class="box" wx:elif="{{item.use=='已使用'}}">-->
+              <!--<view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">-->
+                  <!--<view class="cFFF f30R">{{item.bouns_name}}</view>-->
+                  <!--<view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>-->
+                  <!--<view><span class="full">满{{item.min_goods_amount}}使用</span></view>-->
+              <!--</view>-->
+              <!--<view class="usingTips">有效期为{{item.end_time}}</view>-->
+          <!--</view>-->
           <view class="box" wx:else>
               <view class="store_Coupon_Box center" style="background:#ccc;" data-id="{{item.id}}">
                   <view class="cFFF f30R">{{item.bouns_name}}</view>

@@ -34,6 +34,7 @@ Page({
             coupon:[]
         });
         GMAPI.doSendMsg('Home/tehui',{uid:wx.getStorageSync('strWXID').strUserID,wx_open_id:wx.getStorageSync('strWXID').strWXOpenID,session_id:''},'GET',that.onMsgCallBack_Home);
+        GMAPI.doSendMsg('search/kefu','','POST',that.onMsgCallBack_KeFu);
 
     },
 
@@ -74,6 +75,12 @@ Page({
                 icon:'none',
                 duration: 2000
             });
+        }
+    },
+    onMsgCallBack_KeFu:function (jsonBack){
+        var data=JSON.parse(jsonBack.data);
+        if(data.code==200){
+           app.data.kefu_Phone=data.data.value
         }
     },
     onMsgCallBack_Coupon:function (jsonBack){

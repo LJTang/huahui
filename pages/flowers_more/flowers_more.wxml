@@ -39,22 +39,18 @@
   <view class='cf'><text class='fl'>优惠</text><text class='fr'>￥{{strData.bonus}}</text></view>
   <view class='cf'><text class='fl'>订单总额</text><text class='fr price'>￥{{strData.order_amount}}</text></view>
 </view>
-<!--<view class='zonge cf'>-->
-  <!--<view class='fl left'>订单总额</view>-->
-  <!--<view class='fr right'>￥{{strData.order_amount}}</view>-->
-<!--</view>-->
+
 <view class='zhifu cf'>
   <view class='fl yingfu'>应付金额：<text>￥{{strData.order_amount}}</text></view>
-  <!--<view class='go fr' hover-class='none'>去支付</view>-->
   <view class="display_F row flex_end" wx:if="{{strData.handler_id==1}}">
     <view class="delete_Order" bindtap="closeOrder">取消订单</view>
     <view class="go" bindtap="onPayOrder">去支付</view>
   </view>
-  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">{{strData.handler}}</view>
-  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">确认收货</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">申请退款</view>
   <view class="go fR" wx:elif="{{strData.handler_id==4}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==5}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==6}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==7}}">{{strData.handler}}</view>
-  <view wx:else></view>
+  <view wx:else class="cF00 fR">已取消</view>
 </view>

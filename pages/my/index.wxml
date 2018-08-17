@@ -17,19 +17,19 @@
 
     <view class="bgFFF">
       <navigator url="/pages/my_reservation/my_reservation" hover-class="none">
-        <view class="layout_LR" bindtap="jump_Binding">
+        <view class="layout_LR">
           <view class="layout_Left"><image src="/images/my_reservation.png" mode='aspectFill'></image><span>我的预约</span></view>
           <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
         </view>
       </navigator>
       <navigator url="/pages/my_order/my_order" hover-class="none">
-        <view class="layout_LR" bindtap="jump_Binding">
+        <view class="layout_LR">
           <view class="layout_Left"><image src="/images/my_order.png" mode='aspectFill'></image><span>我的订单</span></view>
           <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
         </view>
       </navigator>
       <navigator url="/pages/my_flowers/my_flowers" hover-class="none">
-        <view class="layout_LR" bindtap="jump_Binding">
+        <view class="layout_LR">
           <view class="layout_Left"><image src="/images/zu.png" mode='aspectFill'></image><span>我的租花</span></view>
           <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
         </view>
@@ -53,13 +53,13 @@
         <!--</view>-->
       <!--</navigator>-->
       <navigator url="/pages/my_location/my_location" hover-class="none">
-        <view class="layout_LR" bindtap="jump_Binding">
+        <view class="layout_LR">
           <view class="layout_Left"><image src="/images/address.png" mode='aspectFill'></image><span>地址管理</span></view>
           <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
         </view>
       </navigator>
 
-      <view class="layout_LR" bindtap="onMakePhoneCall">
+      <view class="layout_LR">
         <view class="layout_Left"><image src="/images/kefu_phone.png" mode='aspectFill'></image><span>一键拨号</span></view>
         <view class="layout_Right"><image src="/images/arrow-right.png" mode='aspectFill'></image></view>
       </view>

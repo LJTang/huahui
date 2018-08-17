@@ -81,7 +81,7 @@
 </view>
 
 <view class='yuyue'>
-  <view class='title title1'>租花信息</view>
+  <view class='title title1'>订单信息</view>
   <block wx:for-items="{{goods}}" wx:key="{{index}}">
     <view class='cf top p3'>
       <image class='fl img' src='{{item.goods_img}}'></image>
@@ -106,11 +106,11 @@
     <view class="delete_Order" bindtap="closeOrder">取消订单</view>
     <view class="go" bindtap="onPayOrder">去支付</view>
   </view>
-  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">{{strData.handler}}</view>
-  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">{{strData.handler}}</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==2}}" bindtap="onConfirmReceipt">确认收货</view>
+  <view class="go fR" wx:elif="{{strData.handler_id==3}}" bindtap="onRefund">申请退款</view>
   <view class="go fR" wx:elif="{{strData.handler_id==4}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==5}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==6}}">{{strData.handler}}</view>
   <view class="go fR" wx:elif="{{strData.handler_id==7}}">{{strData.handler}}</view>
-  <view wx:else></view>
+  <view wx:else class="cF00 fR">已取消</view>
 </view>

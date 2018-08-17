@@ -138,10 +138,11 @@
   margin-top: 20rpx;
 }
 .amountPayable{
-  width:450rpx;
+  width:430rpx;
   text-align: right;
   height:100rpx;
   line-height:100rpx;
+  margin-right:20rpx;
 }
 .foot_Btn{
   width:300rpx;

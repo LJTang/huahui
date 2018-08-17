@@ -59,6 +59,76 @@
     <view class="footer_Head display_F row">
       <view class="head_IMG"><image src="{{goods.detail.goods_img}}"></image></view>
       <view style="font-size:30rpx;">
+        <view class="cF00 mat10">￥{{unitPrice}}</view>
+        <view class="mat5">库存<span>{{stock}}</span>件</view>
+        <view class="mat5">请选择颜色分类</view>
+      </view>
+    </view>
+
+    <view class="sel_Mode display_F row">
+      <view class="zuHua_Btn {{zuBox==false?'bg0':''}}" wx:if="{{isRent==1}}" bindtap="transform" data-statu="0">租花</view>
+      <view class="mal20R {{gouBox==false?'bg0':''}}" wx:if="{{isBuy==1}}" bindtap="transform" data-statu="1">购买</view>
+    </view>
+    <view class="sel_Merchandise mab10">
+      <block wx:for="{{dataAttr}}" wx:for-item="attr" wx:key="{{index}}">
+        <view class="W710"><span class="mat10">{{attr.attr_name}}</span></view>
+        <view class="display_F row">
+          <view class="sel_Merchandise_List {{item.type?'active_Border':''}}" bindtap="changePrice" wx:for="{{attr.values}}" wx:key="{{item.index}}" data-index="{{attr.index}}" data-id="{{item.goods_attr_id}}">{{item.attr_value}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="mab10R mal20R">共计 <span class="cF00 mal20R f36R">￥{{buy_price}}</span></view>
+  </view>
+
+  <view hidden="{{zuBox}}">
+    <view class="footer_Head display_F row">
+      <view class="head_IMG"><image src="{{goods.detail.goods_img}}"></image></view>
+      <view style="font-size:30rpx;">
+        <view class="cF00 mat10">￥{{unitPrice}}</view>
+        <view class="mat5">库存<span>{{stock}}</span>件</view>
+        <view class="mat5">请选择颜色分类</view>
+      </view>
+    </view>
+    <view class="sel_Mode display_F row">
+      <view class="zuHua_Btn {{zuBox==false?'bg0':''}}" wx:if="{{isRent==1}}" bindtap="transform" data-statu="0">租花</view>
+      <view class="mal20R {{gouBox==false?'bg0':''}}" wx:if="{{isBuy==1}}" bindtap="transform" data-statu="1">购买</view>
+    </view>
+    <view class="W710 over_A" style="min-height:{{height}}px;">
+      <block wx:for="{{dataAttr}}" wx:for-item="attr" wx:key="{{index}}">
+        <view class="mat40R">{{attr.attr_name}}</view>
+        <view class="use_View display_F row mat20R">
+          <view class="use_Btn_O {{item.type?'active_Border':''}}" bindtap="changePrice" wx:for="{{attr.values}}" wx:key="{{item.index}}" data-index="{{attr.index}}" data-id="{{item.goods_attr_id}}">{{item.attr_value}}</view>
+        </view>
+      </block>
+      <view class="mat20R mab10R">押金</view>
+      <view class="cash_Pledge" bindtap="tabClick">￥{{zu_price}}租期结束可退</view>
+
+      <view class="mat20R mab10R">预存</view>
+      <view class="prestore" bindtap="tabClick" >￥{{yu_price}}租期内扣费</view>
+
+      <view class="mat20R mab10R">共计 <span class="cF00 mal20R f36R">￥{{buy_price}}</span></view>
+      <!--<view class="prestore" bindtap="tabClick" >￥{{buy_price}}</view>-->
+    </view>
+  </view>
+
+  <view class="" style="">
+    <view class="quantity mat20R mal20R">购买数量 <span class="minus" bindtap="decrease"> - </span><span class="text">{{hua_Number}}</span><span class="jia" bindtap="appendBlock">+</span> 库存{{stock}}件</view>
+
+    <view class="display_F jc_LR row bgFFF">
+      <view class="shopping_IMG" bindtap="onMakePhoneCall"><image src="/images/kefu.png" mode="aspectFill"></image><span class="span_KeFu" style="vertical-align:sub;">客服</span></view>
+      <view class="display_F">
+        <view class="add_Shopping" bindtap="{{zuBox==true?'':'directPurchase'}}" data-statu="2" wx:if="{{isRent==1}}">立即租花</view>
+        <view class="by_Btn {{goods.is_buy==0?'active':''}}" bindtap="{{gouBox==true?'':'directPurchase'}}" data-statu="1" wx:if="{{isBuy==1}}" style="width:{{isRent==0?'500rpx':'250rpx;'}}">立即购买</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{vehicleParameters}}">
+  <view hidden="{{gouBox}}">
+    <view class="footer_Head display_F row">
+      <view class="head_IMG"><image src="{{goods.detail.goods_img}}"></image></view>
+      <view style="font-size:30rpx;">
         <view class="cF00 mat10">￥{{amount}}</view>
         <view class="mat5">库存<span>{{stock}}</span>件</view>
         <view class="mat5">请选择颜色分类</view>
@@ -76,8 +146,7 @@
           <view class="sel_Merchandise_List {{item.type?'active_Border':''}}" bindtap="changePrice" wx:for="{{attr.values}}" wx:key="{{item.index}}" data-index="{{attr.index}}" data-id="{{item.goods_attr_id}}">{{item.attr_value}}</view>
         </view>
       </block>
-      <!--<view class="W710 mat20R">-->
-        <!--<view class="mat20R"><span>总价：</span><span>￥{{zj_price}}</span></view></view>-->
+
 
     </view>
   </view>
@@ -125,3 +194,4 @@
     </view>
 
 </view>
+-->
