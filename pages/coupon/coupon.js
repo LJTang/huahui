@@ -7,6 +7,9 @@ Page({
         coupon:[]
     },
     onLoad:function(){
+        wx.setNavigationBarTitle({
+            title:'我的优惠劵'
+        });
     },
     onShow:function(){
         var that=this;
@@ -20,7 +23,7 @@ Page({
         var data=JSON.parse(jsonBack.data);
         if(data.code==200){
             var list=JSON.parse(jsonBack.data).data.list;
-            var coupon=this.data.coupon;
+            var coupon=[];
 
             for(var i=0;i<list.length;i++){
                 coupon.push(list[i]);

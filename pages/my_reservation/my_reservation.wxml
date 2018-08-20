@@ -12,7 +12,7 @@
 
 <!--</view>-->
 
-<view>
+<view class="container">
     <view>
         <view class="head_nav">
             <ul class="head_nav_ul">

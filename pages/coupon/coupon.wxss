@@ -8,34 +8,73 @@
 .middle{flex-grow: 1;}
 .store_coupon{
   width:750rpx;
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
+  display:block;
+
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*flex-wrap:wrap;*/
 }
 .store_coupon .box{
-  width:223.33rpx;
-  text-align: center;
+  width:710rpx;
   margin-left:20rpx;
+  margin-right:20rpx;
 }
-.store_Coupon_Box{
-  display: inline-block;
-  position:relative;
-  width:223.33rpx;
-  margin-left:0rpx;
-  padding:25rpx 0 10rpx 0;
+.layout_LR{
+  /*display: inline-block;*/
+  /*position:relative;*/
+  width:710rpx;
+  height:200rpx;
+  color:#fff;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
 }
-.full{
-  font-size: 14px;
-  padding: 2px 5px;
-  background:#fff;
-  border-radius:5px;
+
+.coupon_Name{
+  font-size:50rpx;
+  font-weight: bold;
+  margin-top:45rpx;
+}
+.layout_Right{
+  line-height:200rpx;
+  font-size:50rpx;
+  font-weight: bold;
+}
+.layout_Right view{
+  display:inline-block;
+}
+.acrodont{
+  width:708rpx;
+  background-image:-webkit-gradient(linear,50% 0,0 100%,from(transparent), color-stop(.5,transparent),color-stop(.5,#fff),to(#fff)),
+  -webkit-gradient(linear,50% 0,100% 100%,from(transparent), color-stop(.5,transparent),color-stop(.5,#fff),to(#fff));
+  background-image:-moz-linear-gradient(50% 0 -45deg,transparent,transparent 50%,#fff 50%,#fff),
+  -moz-linear-gradient(50% 0 -135deg,transparent,transparent 50%,#fff 50%,#fff);
+  background-size:5px 5px;
+  background-repeat:repeat-x;
+  background-position:0 100%;
+  height:10rpx;
+  margin-top:-10rpx;
+  margin-left:auto;
+  margin-right:auto;
 }
 .usingTips{
-  font-size:28rpx;
+  font-size:32rpx;
+  height:100rpx;
+  line-height:100rpx;
+  border-bottom:1rpx solid #eaeaea;
+  border-left:1rpx solid #eaeaea;
+  border-right:1rpx solid #eaeaea;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
   background:#fff;
-  display:inline-block;
   margin-bottom: 20rpx;
+  color: #999999;
 }
+.layout_Right image{
+  width: 100rpx;
+  height: 80rpx;
+  vertical-align:middle;
+}
+
 .bg_O{background:#e8b5c1;}
 .bor_O{border:1rpx solid #e8b5c1;}
 .bg_E8{background:#e8ddb5;}

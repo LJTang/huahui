@@ -85,6 +85,7 @@
 
 .head_nav{
   border-bottom: 1px solid #999;
+  background:#fff;
 }
 .head_nav_ul{
   display: block;
@@ -101,6 +102,7 @@
 .head_nav_ul .active{
   border-bottom: 2px solid #000;
 }
+.all_List{font-size: 28rpx;margin-bottom:20rpx;background:#fff;}
 /*********************************/
 .unpaid_Remind{
   height:80rpx;

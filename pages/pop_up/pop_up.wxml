@@ -13,20 +13,33 @@
 <template name="bonus">
     <view class="region_box">
         <view class="region_screen" bindtap="close_Pop"></view>
-        <view class="mainBox mediate" style="left:50rpx;">
-
-            <view class="popups" style="margin-top:-{{bonus_Arr.length>4?120:95}}px;font-size:40rpx;margin-left:0;">
+        <view class="mainBox mediate" style="left:50rpx;top:15%;height:70%;">
+            <view class="popups" style="font-size:40rpx;margin-left:0;height:100%;overflow:auto;">
                 <!--<view class="up_List" bindtap="onClickValue" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}">{{item.bouns_name}} {{item.bonus_money}}元</view>-->
                 <!--<view class="up_List" bindtap="onClickValue" data-id="" data-money="0">不使用红包</view>-->
                 <!--<icon class="pop_Clear" type="clear" size="30" bindtap="close_Pop"></icon>-->
                 <icon class="pop_Clear" type="clear" size="30" bindtap="close_Pop"></icon>
                 <view class="center">选择可用优惠券</view>
                 <view class="centerBox" style="padding:10px 0 50px 0;">
-                    <view class="store_Coupon_Box center mat20R" style="background:{{item.color}};" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}" bindtap="onClickValue">
-                        <view class="cFFF f30R">{{item.bouns_name}}</view>
-                        <view class="cFFF pat10R pab10R"><span class="v_align_T f28R">¥</span>{{item.bonus_money}}{{width}}</view>
-                        <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
-                    </view>
+                    <block>
+                        <view wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}" bindtap="onClickValue">
+                            <view class="layout_LR" style="background:{{item.color}};">
+                                <view class="layout_Left mal20R">
+                                    <span class="coupon_Name">{{item.bouns_name}}</span>
+                                    <span class="f30R">满{{item.min_goods_amount}}使用</span>
+                                </view>
+                                <view class="layout_Right mar20R cFFF">
+                                    <view>¥ {{item.bonus_money}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+
+                    <!--<view class="store_Coupon_Box center mat20R" style="background:{{item.color}};" wx:for="{{bonus_Arr}}" wx:key="{{index}}" data-id="{{item.bonus_id}}" data-money="{{item.bonus_money}}" bindtap="onClickValue">-->
+                        <!--<view class="cFFF f30R">{{item.bouns_name}}</view>-->
+                        <!--<view class="cFFF pat10R pab10R"><span class="v_align_T f28R">¥</span>{{item.bonus_money}}{{width}}</view>-->
+                        <!--<view><span class="full">满{{item.min_goods_amount}}使用</span></view>-->
+                    <!--</view>-->
 
                 </view>
 

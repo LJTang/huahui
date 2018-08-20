@@ -1,14 +1,20 @@
 <view class="container">
-
     <view class="store_coupon mat10">
       <block wx:for="{{coupon}}" wx:key="{{index}}">
           <view class="box" wx:if="{{item.time_status=='未过期'}}">
-              <view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">
-                  <view class="cFFF f30R">{{item.bouns_name}}</view>
-                  <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
-                  <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
+              <view class="layout_LR" style="background:{{item.color}};" data-id="{{item.id}}">
+                  <view class="layout_Left mal20R">
+                      <view class="coupon_Name">{{item.bouns_name}}</view>
+                      <view class=""><span>满{{item.min_goods_amount}}使用</span></view>
+                  </view>
+                  <view class="layout_Right mar20R cFFF">
+                      <view>¥ {{item.bonus_money}}</view>
+                  </view>
               </view>
-              <view class="usingTips">有效期为{{item.end_time}}</view>
+              <view class="acrodont"></view>
+              <view class="usingTips">
+                  <view><span class="mal20R">有效期为{{item.end_time}}</span> <span class="fR mar20R">剩余{{item.remaining_time}}天</span></view>
+              </view>
           </view>
           <!--<view class="box" wx:elif="{{item.use=='已使用'}}">-->
               <!--<view class="store_Coupon_Box center" style="background:{{item.color}};" data-id="{{item.id}}">-->
@@ -19,15 +25,24 @@
               <!--<view class="usingTips">有效期为{{item.end_time}}</view>-->
           <!--</view>-->
           <view class="box" wx:else>
-              <view class="store_Coupon_Box center" style="background:#ccc;" data-id="{{item.id}}">
-                  <view class="cFFF f30R">{{item.bouns_name}}</view>
-                  <view class="cFFF pat10R pab10R"><span class="v_align_T f12">¥</span>{{item.bonus_money}}</view>
-                  <view><span class="full">满{{item.min_goods_amount}}使用</span></view>
+              <view class="layout_LR" style="background:#ccc;" data-id="{{item.id}}">
+                  <view class="layout_Left mal20R">
+                      <view class="coupon_Name">{{item.bouns_name}}</view>
+                      <view class=""><span>满{{item.min_goods_amount}}使用</span></view>
+                  </view>
+                  <view class="layout_Right mar20R cFFF">
+                      <view class="mar20R"><image src="/images/gq.png"></image></view>
+                      <view>¥ {{item.bonus_money}}</view>
+                  </view>
               </view>
-              <view class="usingTips">已使用</view>
+              <view class="acrodont"></view>
+              <view class="usingTips">
+                  <view><span class="mal20R">有效期为{{item.end_time}}</span> <span class="fR mar20R">已过期</span></view>
+              </view>
           </view>
 
       </block>
+
       <!--
       <view class="store_Coupon_Box center bg_O">
         <view class="cFFF f30R">店铺优惠券</view>

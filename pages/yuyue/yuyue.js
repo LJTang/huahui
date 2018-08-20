@@ -31,6 +31,9 @@ Page({
             goods_id:parseInt(option.id)
         });
         var that=this;
+        wx.setNavigationBarTitle({
+            title:'预约'
+        });
         wx.getSystemInfo({
             success: function(res) {
                 that.setData({

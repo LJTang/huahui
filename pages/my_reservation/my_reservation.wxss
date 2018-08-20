@@ -85,6 +85,7 @@
 
 .head_nav{
   border-bottom: 1px solid #999;
+  background:#fff;
 }
 .head_nav_ul{
   display: block;
@@ -113,7 +114,11 @@
 .c0{color:#000;}
 .c3{color:#333;}
 
-.all_List{font-size: 28rpx;}
+.all_List{
+  font-size: 28rpx;
+  margin-bottom:20rpx;
+  background:#fff;
+}
 .all_List .all_List_top{
   padding:20rpx 0;
   display: flex;

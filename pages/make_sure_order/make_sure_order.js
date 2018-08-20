@@ -40,6 +40,9 @@ Page({
             rec_id:[option.rec_id],
             goods_number:[option.numb]
         });
+        wx.setNavigationBarTitle({
+            title:'确认订单'
+        });
         wx.getSystemInfo({
             success: function (res) {
                 var rpx=(res.windowWidth / 750);

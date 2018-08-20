@@ -14,7 +14,7 @@
   <view class="bor_TC mat40R"></view>
   <view class="W710">
       <view class="mat30R f36R">基本信息</view>
-    <view class="mat20R f30R" wx:for="{{keData.detail.specification}}" wx:key="{{index}}">{{item.title}}<span class="cB">{{item.title_desc}}</span></view>
+    <view class="mat20R f30R" wx:for="{{goods.detail.specification}}" wx:key="{{index}}">{{item.title}}<span class="cB">{{item.title_desc}}</span></view>
       <!--<view class="mat20R f30R">特别提醒：<span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
       <!--<view class="mat20R f30R">特别提醒：<span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
       <!--<view class="mat20R f30R">特别提醒：<span class="cB">仅限联邦快递24小时可达地区，为方便物流的跟踪，请务必填写收货地址的正确邮编，以免造成投递失败。</span></view>-->
